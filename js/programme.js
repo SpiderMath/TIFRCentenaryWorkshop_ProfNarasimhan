@@ -16,30 +16,54 @@
 					<tbody>
 		`;
 
-		dayGroup.sessions.forEach(function (session) {
-			const rowClass = session.isBreak ? ' class="break-row"' : "";
-			let speakerLine = "";
-
-			if (session.speaker) {
-				if (session.anchor) {
-					speakerLine = `<div class="timetable-speaker">Speaker: <a href="#speaker-${session.anchor}" class="speaker-jump-link">${session.speaker}</a></div>`;
-				} else {
-					speakerLine = `<div class="timetable-speaker">Speaker: ${session.speaker}</div>`;
-				}
-			}
-
-			let talksHTML = "";
-            if (session.talks && session.talks.length > 0) {
-                talksHTML += '<div class="subtalks-list">';
-                session.talks.forEach(function (talk) {
-                    let talkSpeaker = "";
-                    if (talk.speaker) {
-                        if (talk.anchor) {
-                            talkSpeaker = `<span class="subtalk-speaker">&mdash; <a href="#speaker-${talk.anchor}" class="speaker-jump-link">${talk.speaker}</a></span>`.replace("&mdash;", "-");
-                        } else {
-                            talkSpeaker = `<span class="subtalk-speaker">- ${talk.speaker}</span>`;
-                        }
+		function renderSpeakerLine(item, cssClass) {
+            // Check for multi-speaker array first
+            if (Array.isArray(item.speakers) && item.speakers.length > 0) {
+                const speakerLinks = item.speakers.map(function (sp) {
+                    if (typeof sp === "string") {
+                        return sp;
                     }
+                    if (sp.anchor && sp.anchor.trim() !== "") {
+                        return `<a href="#speaker-${sp.anchor}" class="speaker-jump-link">${sp.name}</a>`;
+                    }
+                    return sp.name;
+                });
+
+                const label = speakerLinks.length > 1 ? "Speakers" : "Speaker";
+                return `<div class="${cssClass}">${label}: ${speakerLinks.join(", ")}</div>`;
+            }
+
+            // Fallback for single speaker field
+            if (item.speaker && item.speaker.trim() !== "") {
+                if (item.anchor && item.anchor.trim() !== "") {
+                    return `<div class="${cssClass}">Speaker: <a href="#speaker-${item.anchor}" class="speaker-jump-link">${item.speaker}</a></div>`;
+                }
+                return `<div class="${cssClass}">Speaker: ${item.speaker}</div>`;
+            }
+
+            return "";
+        }
+
+        dayGroup.sessions.forEach(function (session) {
+            // Case A: Umbrella session with multiple sub-talks
+            if (session.talks && session.talks.length > 0) {
+                scheduleHTML += `
+                    <tr class="umbrella-header-row">
+                        <td colspan="2">
+                            <div class="umbrella-banner">
+                                <span class="umbrella-time-badge">${session.time}</span>
+                                <span class="umbrella-heading">${session.title}</span>
+                            </div>
+                        </td>
+                    </tr>
+                `;
+
+                session.talks.forEach(function (talk, index) {
+                    const talkLabel = (talk.time && talk.time.trim() !== "")
+                        ? talk.time
+                        : `Talk ${index + 1}`;
+
+                    const talkSpeaker = renderSpeakerLine(talk, "subtalk-speaker-line");
 
                     let abstractBlock = "";
                     if (talk.abstract && talk.abstract.trim() !== "") {
@@ -51,35 +75,34 @@
                         `;
                     }
 
-                    let talkTime = (talk.time && talk.time.trim() !== "")
-                        ? `<span class="subtalk-time">${talk.time}</span>`
-                        : "";
-
-                    talksHTML += `
-                        <div class="subtalk-item">
-                            <div class="subtalk-header">
-                                ${talkTime}
-                                <span class="subtalk-title"><strong>${talk.title}</strong></span>
+                    scheduleHTML += `
+                        <tr class="subtalk-row">
+                            <td class="timetable-time subtalk-time-cell">${talkLabel}</td>
+                            <td class="timetable-content">
+                                <div class="subtalk-title-text">${talk.title}</div>
                                 ${talkSpeaker}
-                            </div>
-                            ${abstractBlock}
-                        </div>
+                                ${abstractBlock}
+                            </td>
+                        </tr>
                     `;
                 });
-                talksHTML += '</div>';
+                return;
             }
+
+            // Case B: Standalone session (breaks, welcome, public lecture, single talks)
+            const rowClass = session.isBreak ? ' class="break-row"' : "";
+            const speakerLine = renderSpeakerLine(session, "timetable-speaker");
 
             scheduleHTML += `
                 <tr${rowClass}>
                     <td class="timetable-time">${session.time}</td>
                     <td class="timetable-content">
-                        <div class="timetable-title${session.talks && session.talks.length ? ' umbrella-title' : ''}">${session.title}</div>
+                        <div class="timetable-title">${session.title}</div>
                         ${speakerLine}
-                        ${talksHTML}
                     </td>
                 </tr>
             `;
-		});
+        });
 
 		scheduleHTML += `
 					</tbody>
@@ -89,7 +112,6 @@
 	});
 	scheduleMount.innerHTML = scheduleHTML;
 
-	// 2. Render Confirmed Speakers Directory
 	// 2. Render Confirmed Speakers Directory
 	let speakersHTML = "";
 	workshopData.speakers.forEach(function (sp) {

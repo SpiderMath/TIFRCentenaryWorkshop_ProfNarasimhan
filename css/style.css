@@ -1280,63 +1280,84 @@ body::before {
   }
 }
 
-/* Umbrella Sessions & Nested Talks */
-.umbrella-title {
-  font-weight: 700;
-  color: var(--color-tifr-blue);
-  margin-bottom: 0.4rem;
+/* Umbrella Session Banner Row */
+.timetable tr.umbrella-header-row {
+  background-color: var(--bg-surface);
+  border-top: 2px solid var(--color-accent-blue);
+  border-bottom: 1px solid var(--border-color);
 }
 
-[data-theme="dark"] .umbrella-title {
-  color: #93c5fd;
-}
-
-.subtalks-list {
-  margin-top: 0.5rem;
-  padding-left: 0.75rem;
-  border-left: 2px solid var(--border-color);
+.umbrella-banner {
+  padding: 0.6rem 0.75rem;
   display: flex;
-  flex-direction: column;
-  gap: 0.65rem;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
 }
 
-.subtalk-item {
-  font-size: 0.88rem;
-  line-height: 1.45;
-}
-
-.subtalk-header {
-  color: var(--text-main);
-}
-
-.subtalk-time {
-  color: var(--color-accent-blue);
-  font-weight: 600;
-  font-size: 0.82rem;
+.umbrella-time-badge {
+  font-weight: 700;
+  font-size: 0.85rem;
   font-variant-numeric: tabular-nums;
-  margin-right: 0.35rem;
+  color: #ffffff;
+  background-color: var(--color-tifr-blue);
+  padding: 0.15rem 0.55rem;
+  border-radius: 3px;
 }
 
-.subtalk-title {
+[data-theme="dark"] .umbrella-time-badge {
+  background-color: var(--color-accent-blue);
+  color: #ffffff;
+}
+
+.umbrella-heading {
+  font-size: 1rem;
+  font-weight: 700;
   color: var(--text-main);
 }
 
-.subtalk-speaker {
-  color: var(--text-muted);
-  margin-left: 0.25rem;
+/* Sub-Talk Rows (Child items subordinate to the banner) */
+.timetable tr.subtalk-row {
+  background-color: transparent;
+  border-bottom: 1px dashed var(--border-color);
 }
 
-.subtalk-speaker a {
+.timetable tr.subtalk-row:last-of-type {
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* Continuous connecting rail on the left */
+.subtalk-time-cell {
+  position: relative;
+  padding-left: 1.25rem !important;
+  font-size: 0.85rem !important;
+  color: var(--text-muted) !important;
+  border-left: 3px solid var(--color-accent-blue);
+}
+
+.subtalk-title-text {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: 0.2rem;
+}
+
+.subtalk-speaker-line {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.subtalk-speaker-line a {
   color: var(--color-accent-blue);
 }
 
 /* Collapsible Abstract */
 .subtalk-abstract-details {
-  margin-top: 0.25rem;
+  margin-top: 0.35rem;
 }
 
 .subtalk-abstract-details summary {
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   color: var(--color-accent-blue);
   cursor: pointer;
   user-select: none;
@@ -1349,11 +1370,11 @@ body::before {
 
 .subtalk-abstract-body {
   margin-top: 0.35rem;
-  padding: 0.5rem 0.75rem;
-  background-color: var(--bg-page);
+  padding: 0.55rem 0.75rem;
+  background-color: var(--bg-surface);
   border: 1px solid var(--border-color);
   border-radius: 3px;
-  font-size: 0.82rem;
+  font-size: 0.85rem;
   line-height: 1.5;
   color: var(--text-muted);
 }

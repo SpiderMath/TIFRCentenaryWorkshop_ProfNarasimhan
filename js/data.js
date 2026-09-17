@@ -27,8 +27,10 @@ const workshopData = {
                         {
                             time: "10:00 - 10:45",
                             title: "Formally discussing algorithms",
-                            speaker: "Ashutosh Trivedi",
-                            anchor: "ashutosh-trivedi",
+                            speakers: [ // Multi-speaker support
+                                { name: "Ashutosh Trivedi", anchor: "ashutosh-trivedi" },
+                                { name: "Rohit Gurjar", anchor: "rohit-gurjar" }
+                            ],
                             abstract: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
                         },
                         {
