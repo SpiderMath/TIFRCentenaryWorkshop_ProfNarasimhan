@@ -40,7 +40,7 @@ const workshopData = {
         },
         {
           time: "17:30 - 19:00",
-          title: "Public lecture - Prof. Rajeev Alur",
+          title: "Public lecture: Trustworthy AI for Clinical Decision Making",
           speaker: "Prof. Rajeev Alur",
           anchor: "rajeev-alur",
           isBreak: false
@@ -134,9 +134,9 @@ const workshopData = {
     {
       anchor: "cm-chandrashekar",
       name: "C M Chandrashekar",
-      affiliation: "????????????",
+      affiliation: "IISc Bengaluru",
       image: "assets/cm-chandrashekar.jpg",
-      website: ""
+      website: "https://eecs.iisc.ac.in/people/c-m-chandrashekar/"
     },
     {
       anchor: "benny-applebaum",

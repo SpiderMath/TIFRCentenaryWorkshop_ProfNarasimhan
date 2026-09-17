@@ -4,9 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Centenary Workshop: Prof. R. Narasimhan (1926 - 2007) | TIFR Mumbai</title>
+  <link rel="icon" type="image/svg+xml" href="assets/tifr-logo-blue.png" id="site-favicon">
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body data-page="home">
 
   <header class="site-header">
     <div class="nav-container">
@@ -52,7 +53,51 @@
   </header>
 
   <main id="main-content">
-    <!-- Home content and carousel will be inserted here in Step 2 -->
+    <!-- Notice container controlled by js/notices.js -->
+    <div id="notices-mount"></div>
+
+    <header class="home-hero">
+      <div class="hero-badge">1926 - 2007</div>
+      <h1 class="hero-title">Centenary Workshop in honour of Prof. R. Narasimhan</h1>
+      <div class="programme-details-bar">
+        <span class="detail-item"><strong>Dates:</strong> 10-11 December 2026</span>
+        <span class="detail-bullet" aria-hidden="true">&bull;</span>
+        <span class="detail-item"><strong>Venue:</strong> Homi Bhabha Auditorium, TIFR, Mumbai</span>
+      </div>
+    </header>
+
+    <section class="home-intro-section">
+      <div class="home-intro-text">
+        <p>
+          Tata Institute of Fundamental Research (TIFR) was Professor Narasimhan’s primary place of work, where he pioneered early computer science research and development in India. The workshop is being organised at TIFR’s main campus in Mumbai to commemorate his distinguished career and enduring legacy on his birth centenary.
+        </p>
+        <p>
+          The two-day event brings together leading researchers from India and abroad across core domains of computing. The programme combines technical sessions, a public lecture on trustworthy AI, a student poster session, and a commemorative session with reflections from his former colleagues, students, and collaborators.
+        </p>
+        
+        <div class="home-action-row">
+          <a href="programme.html" class="btn-primary">View Programme Details &rarr;</a>
+          <a href="participate.html" class="btn-secondary">Participation & Registration &rarr;</a>
+        </div>
+      </div>
+
+      <div class="profile-figure-wrap">
+        <img 
+          src="assets/r_narasimhan_photo.jpg" 
+          alt="Prof. R. Narasimhan" 
+          class="profile-main-photo"
+        >
+        <p class="figure-caption">Prof. R. Narasimhan (1926 - 2007)</p>
+      </div>
+    </section>
+
+    <!-- Narasimhan Quote Block -->
+    <section class="quote-section">
+      <blockquote class="narasimhan-quote">
+        <p>“The technologically literate environment of TIFR was an essential facilitating factor in undertaking cutting-edge work in computer science.”</p>
+        <cite>R. Narasimhan, <em>Men, machines, and ideas</em>, 1999</cite>
+      </blockquote>
+    </section>
   </main>
 
   <footer class="site-footer">
@@ -60,7 +105,7 @@
       <div class="footer-col">
         <h4>Contact</h4>
         <p><strong>Prof. Umang Bhaskar</strong><br>Email: <a href="mailto:umang@tifr.res.in">umang@tifr.res.in</a></p>
-        <p><strong>Ms. Sana Naeem Shaikh</strong><br>Email: <a href="mailto:sana.shaikh@tifr.res.in">sana.shaikh@tifr.res.in</a><br>Tel: <a href="tel:+912222782531">+91-22-2278 2531</a></p>
+        <p><strong>Smt. Sana Naeem Shaikh</strong><br>Email: <a href="mailto:sana.shaikh@tifr.res.in">sana.shaikh@tifr.res.in</a><br>Tel: <a href="tel:+912222782531">+91-22-2278 2531</a></p>
       </div>
 
       <div class="footer-col">
@@ -95,5 +140,6 @@
   </footer>
 
   <script src="js/theme.js"></script>
+  <script src="js/notices.js"></script>
 </body>
 </html>
