@@ -1,4 +1,3 @@
-```markdown
 # Centenary Workshop in Honour of Prof. R. Narasimhan (1926 - 2007)
 ### Tata Institute of Fundamental Research (TIFR), Mumbai | 10-11 December 2026
 
