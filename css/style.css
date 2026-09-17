@@ -637,14 +637,45 @@ a:focus {
 
 /* Accommodation Table */
 .accommodation-note {
-  font-size: 0.92rem;
-  color: var(--text-muted);
-  margin-bottom: 1rem;
-  line-height: 1.5;
+    font-size: 0.92rem;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.accommodation-regions-list {
+    list-style: none;
+    margin-bottom: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+}
+
+.accommodation-regions-list li {
+    font-size: 0.92rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    padding-left: 0.85rem;
+    border-left: 2px solid var(--color-accent-blue);
+}
+
+.accommodation-regions-list li strong {
+    color: var(--text-main);
+}
+
+.accommodation-subheading {
+    font-size: 1.05rem;
+    color: var(--color-tifr-blue);
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+[data-theme="dark"] .accommodation-subheading {
+    color: #93c5fd;
 }
 
 .hotel-table {
-  text-align: left;
+    text-align: left;
 }
 
 .hotel-table th {
