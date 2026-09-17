@@ -13,21 +13,21 @@ const workshopData = {
                     title: "Algorithms & Formal Methods",
                     isBreak: false,
                     talks: [
-                        {
-                            title: "Approximation Algorithms in Network Design",
-                            speakers: ["chandra-chekuri"],
-                            abstract: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-                        },
-                        {
-                            title: "Stochastic Games and Quantitative Verification",
-                            speakers: ["ashutosh-trivedi"],
-                            abstract: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
-                        },
-                        {
-                            title: "Algebraic Methods in Derandomization",
-                            speakers: ["rohit-gurjar", "benny-applebaum"],
-                            abstract: "Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra."
-                        }
+                        // {
+                        //     title: "Approximation Algorithms in Network Design",
+                        //     speakers: ["chandra-chekuri"],
+                        //     abstract: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                        // },
+                        // {
+                        //     title: "Stochastic Games and Quantitative Verification",
+                        //     speakers: ["ashutosh-trivedi"],
+                        //     abstract: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+                        // },
+                        // {
+                        //     title: "Algebraic Methods in Derandomization",
+                        //     speakers: ["rohit-gurjar", "benny-applebaum"],
+                        //     abstract: "Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra."
+                        // }
                     ]
                 },
                 {
