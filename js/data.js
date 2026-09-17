@@ -6,68 +6,49 @@ const workshopData = {
                 {
                     time: "09:00 - 09:15",
                     title: "Welcome address",
-                    speaker: "",
-                    anchor: "",
                     isBreak: false
                 },
                 {
                     time: "09:15 - 12:00",
                     title: "Algorithms & Formal Methods",
-                    speaker: "",
-                    anchor: "",
                     isBreak: false,
                     talks: [
                         {
-                            time: "09:15 - 10:00",
-                            title: "Algorithms are intriguing",
-                            speaker: "Chandra Chekuri",
-                            anchor: "chandra-chekuri",
-                            abstract: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                            title: "Approximation Algorithms in Network Design",
+                            speakers: ["chandra-chekuri"],
+                            abstract: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
                         },
                         {
-                            time: "10:00 - 10:45",
-                            title: "Formally discussing algorithms",
-                            speakers: [ // Multi-speaker support
-                                { name: "Ashutosh Trivedi", anchor: "ashutosh-trivedi" },
-                                { name: "Rohit Gurjar", anchor: "rohit-gurjar" }
-                            ],
-                            abstract: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                            title: "Stochastic Games and Quantitative Verification",
+                            speakers: ["ashutosh-trivedi"],
+                            abstract: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
                         },
                         {
-                            // time: "11:15 - 12:00",
-                            title: "Methods in formal things",
-                            speaker: "Rohit Gurjar",
-                            anchor: "rohit-gurjar",
-                            abstract: "Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris."
+                            title: "Algebraic Methods in Derandomization",
+                            speakers: ["rohit-gurjar", "benny-applebaum"],
+                            abstract: "Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra."
                         }
                     ]
                 },
                 {
                     time: "12:00 - 13:30",
                     title: "Lunch",
-                    speaker: "",
-                    anchor: "",
                     isBreak: true
                 },
                 {
                     time: "13:30 - 16:00",
                     title: "Commemorative session on Prof. Narasimhan",
-                    speaker: "",
-                    anchor: "",
                     isBreak: false
                 },
                 {
                     time: "16:00 - 17:30",
                     title: "Student poster session",
-                    speaker: "",
-                    anchor: "",
                     isBreak: false
                 },
                 {
                     time: "17:30 - 19:00",
                     title: "Public lecture: Trustworthy AI for Clinical Decision Making",
-                    speaker: "Prof. Rajeev Alur",
-                    anchor: "rajeev-alur",
+                    speakers: ["rajeev-alur"],
                     isBreak: false
                 }
             ]
@@ -78,29 +59,21 @@ const workshopData = {
                 {
                     time: "09:30 - 12:30",
                     title: "Complexity & Cryptography",
-                    speaker: "",
-                    anchor: "",
                     isBreak: false
                 },
                 {
                     time: "12:30 - 14:00",
                     title: "Lunch",
-                    speaker: "",
-                    anchor: "",
                     isBreak: true
                 },
                 {
                     time: "14:00 - 17:30",
                     title: "AI, ML & Quantum",
-                    speaker: "",
-                    anchor: "",
                     isBreak: false
                 },
                 {
                     time: "17:30 - 18:00",
                     title: "Closing session",
-                    speaker: "",
-                    anchor: "",
                     isBreak: false
                 }
             ]

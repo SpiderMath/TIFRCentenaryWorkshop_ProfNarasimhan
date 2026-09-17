@@ -2,29 +2,20 @@
     // Notice configuration list
     // Set "active" to true/false to turn an item on or off globally.
     // In "pages", set boolean flags to control on which pages the notice appears.
-    const siteNotices = [{
-        id: "poster-extension",
-        tag: "Notice",
-        html: 'Poster submission deadline has been extended to 15 November 2026. <a href="participate.html#engagement-tracks">Submit your poster proposal</a>.',
-        active: true,
-        pages: {
-            home: true,
-            programme: true,
-            participate: true,
-            publicLecture: true
-        }
-    }, {
-        id: "general-registration",
-        tag: "Update",
-        html: 'Workshop attendance registration is open. <a href="participate.html#engagement-tracks">Register here</a>.',
-        active: false,
-        pages: {
-            home: true,
-            programme: true,
-            participate: true,
-            publicLecture: false
-        }
-    }];
+    const siteNotices = [
+        // {
+        //     id: "poster-extension",
+        //     tag: "Notice",
+        //     html: 'Poster submission deadline has been extended to 15 November 2026. <a href="participate.html#engagement-tracks">Submit your poster proposal</a>.',
+        //     active: true,
+        //     pages: {
+        //         home: true,
+        //         programme: true,
+        //         participate: true,
+        //         publicLecture: true
+        //     }
+        // }
+    ];
     const mountPoint = document.getElementById("notices-mount");
     if (!mountPoint) return;
     // Determine current page key from body data-page or filename
