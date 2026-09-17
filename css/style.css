@@ -1279,3 +1279,81 @@ body::before {
     height: 280px;
   }
 }
+
+/* Umbrella Sessions & Nested Talks */
+.umbrella-title {
+  font-weight: 700;
+  color: var(--color-tifr-blue);
+  margin-bottom: 0.4rem;
+}
+
+[data-theme="dark"] .umbrella-title {
+  color: #93c5fd;
+}
+
+.subtalks-list {
+  margin-top: 0.5rem;
+  padding-left: 0.75rem;
+  border-left: 2px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.subtalk-item {
+  font-size: 0.88rem;
+  line-height: 1.45;
+}
+
+.subtalk-header {
+  color: var(--text-main);
+}
+
+.subtalk-time {
+  color: var(--color-accent-blue);
+  font-weight: 600;
+  font-size: 0.82rem;
+  font-variant-numeric: tabular-nums;
+  margin-right: 0.35rem;
+}
+
+.subtalk-title {
+  color: var(--text-main);
+}
+
+.subtalk-speaker {
+  color: var(--text-muted);
+  margin-left: 0.25rem;
+}
+
+.subtalk-speaker a {
+  color: var(--color-accent-blue);
+}
+
+/* Collapsible Abstract */
+.subtalk-abstract-details {
+  margin-top: 0.25rem;
+}
+
+.subtalk-abstract-details summary {
+  font-size: 0.78rem;
+  color: var(--color-accent-blue);
+  cursor: pointer;
+  user-select: none;
+  display: inline-block;
+}
+
+.subtalk-abstract-details summary:hover {
+  text-decoration: underline;
+}
+
+.subtalk-abstract-body {
+  margin-top: 0.35rem;
+  padding: 0.5rem 0.75rem;
+  background-color: var(--bg-page);
+  border: 1px solid var(--border-color);
+  border-radius: 3px;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
