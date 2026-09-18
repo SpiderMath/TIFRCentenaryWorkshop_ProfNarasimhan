@@ -507,7 +507,6 @@ a:focus {
 .participation-grid {
   display: grid;
   /* grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); */
-  grid-template-columns: 1fr;
   gap: 1.5rem;
   margin-top: 1rem;
 }
@@ -548,6 +547,9 @@ a:focus {
   border-radius: 3px;
   margin-bottom: 1.5rem;
   color: var(--text-main);
+  ol {
+    padding-left: 2rem;
+  }  
 }
 
 .track-policy-box.special-policy {
