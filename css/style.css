@@ -547,14 +547,14 @@ a:focus {
   border-radius: 3px;
   margin-bottom: 1.5rem;
   color: var(--text-main);
-  ol {
-    padding-left: 2rem;
-  }  
 }
 
 .track-policy-box.special-policy {
   border-left-color: var(--color-accent-blue);
   background-color: var(--bg-page);
+  ol {
+    padding-left: 2rem;
+  }  
 }
 
 .btn-primary {
