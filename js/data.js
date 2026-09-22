@@ -5,29 +5,41 @@ const workshopData = {
             sessions: [
                 {
                     time: "09:00 - 09:15",
-                    title: "Welcome address",
+                    title: "Welcome address (Director & Dean)",
                     isBreak: false
                 },
                 {
-                    time: "09:15 - 12:00",
+                    time: "09:15 - 10:00",
                     title: "Algorithms & Formal Methods",
                     isBreak: false,
                     talks: [
-                        // {
-                        //     title: "Approximation Algorithms in Network Design",
-                        //     speakers: ["chandra-chekuri"],
-                        //     abstract: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-                        // },
-                        // {
-                        //     title: "Stochastic Games and Quantitative Verification",
-                        //     speakers: ["ashutosh-trivedi"],
-                        //     abstract: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
-                        // },
-                        // {
-                        //     title: "Algebraic Methods in Derandomization",
-                        //     speakers: ["rohit-gurjar", "benny-applebaum"],
-                        //     abstract: "Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra."
-                        // }
+                        {
+                            title: "TBA",
+                            speakers: ["devavrat-shah", "ashutosh-trivedi"],
+                            abstract: ""
+                        }
+                    ]
+                },
+                {
+                    time: "10:00 - 10:30",
+                    title: "Tea break",
+                    isBreak: true
+                },
+                {
+                    time: "10:30 - 12:00",
+                    title: "Algorithms & Formal Methods",
+                    isBreak: false,
+                    talks: [
+                        {
+                            title: "TBA",
+                            speakers: ["diptarka-chakraborty"],
+                            abstract: ""
+                        },
+                        {
+                            title: "TBA",
+                            speakers: ["chandra-chekuri"],
+                            abstract: ""
+                        }
                     ]
                 },
                 {
@@ -42,7 +54,7 @@ const workshopData = {
                 },
                 {
                     time: "16:00 - 17:30",
-                    title: "Student poster session",
+                    title: "Student poster session and tea break",
                     isBreak: false
                 },
                 {
@@ -57,24 +69,87 @@ const workshopData = {
             day: "Friday, 11 December 2026",
             sessions: [
                 {
-                    time: "09:30 - 12:30",
+                    time: "09:30 - 11:00",
                     title: "Complexity & Cryptography",
-                    isBreak: false
+                    isBreak: false,
+                    talks: [
+                        {
+                            title: "TBA",
+                            speakers: ["benny-applebaum"],
+                            abstract: ""
+                        },
+                        {
+                            title: "TBA",
+                            speakers: ["srikanth-srinivasan"],
+                            abstract: ""
+                        }
+                    ]
                 },
                 {
-                    time: "12:30 - 14:00",
+                    time: "11:00 - 11:30",
+                    title: "Tea break",
+                    isBreak: true
+                },
+                {
+                    time: "11:30 - 13:00",
+                    title: "Complexity & Cryptography",
+                    isBreak: false,
+                    talks: [
+                        {
+                            title: "TBA",
+                            speakers: ["rohit-gurjar"],
+                            abstract: ""
+                        },
+                        {
+                            title: "TBA",
+                            speakers: ["TBD"],
+                            abstract: ""
+                        }
+                    ]
+                },
+                {
+                    time: "13:00 - 14:00",
                     title: "Lunch",
                     isBreak: true
                 },
                 {
-                    time: "14:00 - 17:30",
+                    time: "14:00 - 15:30",
                     title: "AI, ML & Quantum",
-                    isBreak: false
+                    isBreak: false,
+                    talks: [
+                        {
+                            title: "TBA",
+                            speakers: ["preeti-rao"],
+                            abstract: ""
+                        },
+                        {
+                            title: "TBA",
+                            speakers: ["aditya-gopalan"],
+                            abstract: ""
+                        }
+                    ]
                 },
                 {
-                    time: "17:30 - 18:00",
-                    title: "Closing session",
-                    isBreak: false
+                    time: "15:30 - 16:00",
+                    title: "Tea break",
+                    isBreak: true
+                },
+                {
+                    time: "16:00 - 17:30",
+                    title: "AI, ML & Quantum",
+                    isBreak: false,
+                    talks: [
+                        {
+                            title: "TBA",
+                            speakers: ["cm-chandrashekar"],
+                            abstract: ""
+                        },
+                        {
+                            title: "TBA",
+                            speakers: ["TBD"],
+                            abstract: ""
+                        }
+                    ]
                 }
             ]
         }
