@@ -1513,38 +1513,63 @@ body::before {
 
 /* Biography References List */
 .references-block {
-  margin-top: 3rem;
+  margin-top: 3.5rem;
 }
 
-.biography-links-list {
+.academic-references-list {
   list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 0.85rem;
   margin-top: 1rem;
-}
-
-.biography-links-list li {
-  background-color: var(--bg-surface);
-  border: 1px solid var(--border-color);
-  border-left: 3px solid var(--color-accent-blue);
-  border-radius: 4px;
-  padding: 0.75rem 1rem;
   display: flex;
   flex-direction: column;
-  gap: 0.2rem;
 }
 
-.biography-links-list a {
+.reference-item {
+  padding: 1.15rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.reference-item:first-child {
+  padding-top: 0.35rem;
+}
+
+.reference-item:last-child {
+  border-bottom: none;
+}
+
+.reference-title {
+  font-size: 1.05rem;
+  font-weight: 600;
   color: var(--color-tifr-blue);
-  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  text-decoration: none;
+  line-height: 1.4;
 }
 
-[data-theme="dark"] .biography-links-list a {
+.reference-title:hover {
+  text-decoration: underline;
+  color: var(--color-accent-blue);
+}
+
+[data-theme="dark"] .reference-title {
   color: #93c5fd;
 }
 
-.bio-link-note {
-  font-size: 0.85rem;
+.reference-title .external-arrow {
+  font-size: 0.95rem;
+  opacity: 0.65;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.reference-title:hover .external-arrow {
+  opacity: 1;
+  transform: translate(2px, -2px);
+}
+
+.reference-summary {
+  font-size: 0.92rem;
   color: var(--text-muted);
+  margin-top: 0.35rem;
+  line-height: 1.55;
 }
