@@ -1,10 +1,10 @@
 /* Color tokens and theme variables */
 :root {
-  /* TIFR Blue: deep institutional navy */
-  --color-tifr-blue: #003366;
-  /* Accent: sky blue for interactive states */
-  --color-accent-blue: #0284c7;
-  --color-accent-hover: #0369a1;
+  /* Institutional Blue */
+  --color-tifr-blue: #2c61c8;
+  /* Interactive accents and hovers */
+  --color-accent-blue: #2c61c8;
+  --color-accent-hover: #1f4bb0;
 
   /* Light theme defaults */
   --bg-page: #ffffff;
