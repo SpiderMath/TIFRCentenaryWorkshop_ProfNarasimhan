@@ -232,5 +232,21 @@ const workshopData = {
             image: "assets/rohit-gurjar.jpg",
             website: "https://www.cse.iitb.ac.in/~rgurjar/"
         }
-    ]
+    ],
+    sponsors: [
+        {
+            name: "Tata Consultancy Services",
+            logo: "assets/TCS-logo-black.svg",
+            logoDark: "assets/TCS-logo-white.svg",
+            url: "https://www.tcs.com/",
+            subtitle: ""
+        },
+        {
+            name: "Professor R. Narasimhan Endowment",
+            logo: "",
+            logoDark: "",
+            url: "https://www.tifr.res.in/endowment/prof-r-narasimhan-lecture-award.htm",
+            subtitle: "???"
+        }
+    ],
 };
