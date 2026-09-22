@@ -242,11 +242,11 @@ const workshopData = {
             subtitle: ""
         },
         {
-            name: "Professor R. Narasimhan Endowment",
+            name: "The Professor R. Narasimhan Endowment",
             logo: "",
             logoDark: "",
             url: "https://www.tifr.res.in/endowment/prof-r-narasimhan-lecture-award.htm",
-            subtitle: "???"
+            subtitle: "Established by the family of Prof. R. Narasimhan and The Bharat Family Fund"
         }
     ],
 };
