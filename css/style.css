@@ -1,33 +1,43 @@
 /* Color tokens and theme variables */
 :root {
-  /* Institutional Blue */
-  --color-tifr-blue: #2c61c8;
-  /* Interactive accents and hovers */
-  --color-accent-blue: #2c61c8;
-  --color-accent-hover: #1f4bb0;
+  /* Official TIFR Brand Palette Tokens */
+  --tifr-blue-primary: #2C61C8;     /* Official Blue */
+  --tifr-blue-light: #178BCC;       /* Official Light Blue */
+  --tifr-teal: #009587;             /* Official Teal */
+  --tifr-black: #1C1C1C;            /* Official Black */
+  --tifr-white: #FDFDFD;            /* Official Off-White */
+  
+  --color-tifr-blue: #2C61C8;
+  --color-accent-blue: #1A439B;      /* we need high contrast for small text/links on white */
+  --color-accent-hover: #122F70;     /* for strong contrast on hover (found by brute forcing, prolly could improve?) */
 
-  /* Light theme defaults */
-  --bg-page: #ffffff;
-  --bg-surface: #f8fafc;
-  --text-main: #0f172a;
-  --text-muted: #475569;
-  --border-color: #cbd5e1;
-  --nav-bg: #ffffff;
-  --footer-bg: #002244;
-  --footer-text: #e2e8f0;
-  --footer-muted: #94a3b8;
+  /* Light Theme Surfaces & Text */
+  --bg-page: #FDFDFD;                /* Official TIFR Off-White, yet again! */
+  --bg-surface: #F1F5F9;
+  --text-main: #1C1C1C;              /* Official TIFR Black ;-) */
+  --text-muted: #334155;            /* Dark slate any muted text? */
+  --border-color: #CBD5E1;
+  --nav-bg: #FDFDFD;
+  --footer-bg: #174A8B;
+  --footer-text: #FDFDFD;
+  --footer-muted: #CBD5E1;
 }
 
 [data-theme="dark"] {
-  --bg-page: #18202c;
-  --bg-surface: #222c3c;
-  --text-main: #f1f5f9;
-  --text-muted: #94a3b8;
+  --color-tifr-blue: #38BDF8;
+  --color-accent-blue: #38BDF8;      /* Bright blue meeting 4.5:1+ against dark bg */
+  --color-accent-hover: #7DD3FC;
+
+  /* Dark Theme Surfaces & Text */
+  --bg-page: #0F172A;
+  --bg-surface: #1E293B;
+  --text-main: #F8FAFC;
+  --text-muted: #94A3B8;
   --border-color: #334155;
-  --nav-bg: #18202c;
-  --footer-bg: #101620;
-  --footer-text: #f1f5f9;
-  --footer-muted: #94a3b8;
+  --nav-bg: #0F172A;
+  --footer-bg: #090D16;
+  --footer-text: #F8FAFC;
+  --footer-muted: #94A3B8;
 }
 
 /* Reset and base typography */
