@@ -235,18 +235,18 @@ const workshopData = {
     ],
     sponsors: [
         {
-            name: "Tata Consultancy Services",
-            logo: "assets/TCS-logo-black.svg",
-            logoDark: "assets/TCS-logo-white.svg",
-            url: "https://www.tcs.com/",
-            subtitle: ""
-        },
-        {
             name: "The Professor R. Narasimhan Endowment",
             logo: "",
             logoDark: "",
             url: "https://www.tifr.res.in/endowment/prof-r-narasimhan-lecture-award.htm",
             subtitle: "Established by the family of Prof. R. Narasimhan and The Bharat Family Fund"
+        },
+        {
+            name: "Tata Consultancy Services",
+            logo: "assets/TCS-logo-black.svg",
+            logoDark: "assets/TCS-logo-white.svg",
+            url: "https://www.tcs.com/",
+            subtitle: ""
         }
     ],
 };
