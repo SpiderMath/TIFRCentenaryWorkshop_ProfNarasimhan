@@ -316,7 +316,9 @@ a:focus {
   font-size: 0.9rem;
   background-color: var(--bg-surface);
   border: 1px solid var(--border-color);
-  padding: 0.35rem 0.75rem;
+  line-height: 1;
+  padding: 0.4rem 1rem 0.6rem;
+  margin-bottom: 1rem;
   border-radius: 3px;
 }
 
