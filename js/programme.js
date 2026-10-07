@@ -138,6 +138,9 @@
         const targetCard = document.getElementById(targetId);
 
         if (targetCard) {
+            event.preventDefault();
+            window.history.pushState(null, "", link.getAttribute("href"));
+
             document.querySelectorAll(".speaker-card.highlighted").forEach(function (card) {
                 card.classList.remove("highlighted");
             });
