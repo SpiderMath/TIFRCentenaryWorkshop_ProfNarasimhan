@@ -24,10 +24,11 @@
         }
         updateLogo(theme);
     }
-    // Check saved preference or system preference
+    // Check saved preference or default to light
     const savedTheme = localStorage.getItem("workshop-theme");
     const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
-    const initialTheme = savedTheme || (prefersDark ? "dark" : "light");
+    // const initialTheme = savedTheme || (prefersDark ? "dark" : "light");
+    const initialTheme = savedTheme || "light";
     setTheme(initialTheme);
     if (themeToggle) {
         themeToggle.addEventListener("click", function() {
