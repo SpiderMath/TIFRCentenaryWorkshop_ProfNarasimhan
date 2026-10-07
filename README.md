@@ -219,6 +219,20 @@ Add all relevant anchor slugs to the `speakers` array:
 
 ```
 
+#### Interactive talk editor
+
+Run the dependency-free editor from the repository root:
+
+```bash
+python3 scripts/manage_talks.py
+```
+
+It prompts you to add or edit a talk, select one of the supported thematic time
+slots, choose one or more speakers, enter the title and abstract, review the
+change, and confirm before updating `js/data.js`. An edited talk can also be
+moved to another supported slot. Abstracts can span multiple lines; enter
+`.done` on its own line to finish. Enter `q` at a selection prompt to cancel.
+
 ---
 
 ### 3. How to Add, Update, or Delete a Session
