@@ -7,11 +7,11 @@
         if (!brandLogo) return;
         if (theme === "dark") {
             // brandLogo.src = "assets/tifr-logo-dark.svg";
-            brandLogo.src = "assets/tifr-logo-blue.png";
+            brandLogo.src = "assets/tifr-logo-blue.svg";
             brandLogo.alt = "TIFR Logo (Dark Theme)";
         } else {
             // brandLogo.src = "assets/tifr-logo-light.svg";
-            brandLogo.src = "assets/tifr-logo-blue.png";
+            brandLogo.src = "assets/tifr-logo-blue.svg";
             brandLogo.alt = "TIFR Logo (Light Theme)";
         }
     }
