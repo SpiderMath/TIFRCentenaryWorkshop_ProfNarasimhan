@@ -1,252 +1,258 @@
 const workshopData = {
-    schedule: [
+  schedule: [
+    {
+      day: "Thursday, 10 December 2026",
+      sessions: [
         {
-            day: "Thursday, 10 December 2026",
-            sessions: [
-                {
-                    time: "09:00 - 09:15",
-                    title: "Welcome address (Director & Dean)",
-                    isBreak: false
-                },
-                {
-                    time: "09:15 - 10:00",
-                    title: "Algorithms & Formal Methods",
-                    isBreak: false,
-                    talks: [
-                        {
-                            title: "TBA",
-                            speakers: ["devavrat-shah", "ashutosh-trivedi"],
-                            abstract: ""
-                        }
-                    ]
-                },
-                {
-                    time: "10:00 - 10:30",
-                    title: "Tea break",
-                    isBreak: true
-                },
-                {
-                    time: "10:30 - 12:00",
-                    title: "Algorithms & Formal Methods",
-                    isBreak: false,
-                    talks: [
-                        {
-                            title: "TBA",
-                            speakers: ["diptarka-chakraborty"],
-                            abstract: ""
-                        },
-                        {
-                            title: "TBA",
-                            speakers: ["chandra-chekuri"],
-                            abstract: ""
-                        }
-                    ]
-                },
-                {
-                    time: "12:00 - 13:30",
-                    title: "Lunch",
-                    isBreak: true
-                },
-                {
-                    time: "13:30 - 16:00",
-                    title: "Commemorative session on Prof. Narasimhan",
-                    isBreak: false
-                },
-                {
-                    time: "16:00 - 17:30",
-                    title: "Student poster session and tea break",
-                    isBreak: false
-                },
-                {
-                    time: "17:30 - 19:00",
-                    title: "Public lecture: Trustworthy AI for Clinical Decision Making",
-                    speakers: ["rajeev-alur"],
-                    isBreak: false
-                }
-            ]
+          time: "09:00 - 09:15",
+          title: "Welcome address (Director & Dean)",
+          isBreak: false,
         },
         {
-            day: "Friday, 11 December 2026",
-            sessions: [
-                {
-                    time: "09:30 - 11:00",
-                    title: "Complexity & Cryptography",
-                    isBreak: false,
-                    talks: [
-                        {
-                            title: "TBA",
-                            speakers: ["benny-applebaum"],
-                            abstract: ""
-                        },
-                        {
-                            title: "TBA",
-                            speakers: ["srikanth-srinivasan"],
-                            abstract: ""
-                        }
-                    ]
-                },
-                {
-                    time: "11:00 - 11:30",
-                    title: "Tea break",
-                    isBreak: true
-                },
-                {
-                    time: "11:30 - 13:00",
-                    title: "Complexity & Cryptography",
-                    isBreak: false,
-                    talks: [
-                        {
-                            title: "TBA",
-                            speakers: ["rohit-gurjar"],
-                            abstract: ""
-                        },
-                        {
-                            title: "TBA",
-                            speakers: ["TBD"],
-                            abstract: ""
-                        }
-                    ]
-                },
-                {
-                    time: "13:00 - 14:00",
-                    title: "Lunch",
-                    isBreak: true
-                },
-                {
-                    time: "14:00 - 15:30",
-                    title: "AI, ML & Quantum",
-                    isBreak: false,
-                    talks: [
-                        {
-                            title: "TBA",
-                            speakers: ["preeti-rao"],
-                            abstract: ""
-                        },
-                        {
-                            title: "TBA",
-                            speakers: ["aditya-gopalan"],
-                            abstract: ""
-                        }
-                    ]
-                },
-                {
-                    time: "15:30 - 16:00",
-                    title: "Tea break",
-                    isBreak: true
-                },
-                {
-                    time: "16:00 - 17:30",
-                    title: "AI, ML & Quantum",
-                    isBreak: false,
-                    talks: [
-                        {
-                            title: "TBA",
-                            speakers: ["cm-chandrashekar"],
-                            abstract: ""
-                        },
-                        {
-                            title: "TBA",
-                            speakers: ["TBD"],
-                            abstract: ""
-                        }
-                    ]
-                }
-            ]
-        }
-    ],
-    speakers: [
-        {
-            anchor: "rajeev-alur",
-            name: "Rajeev Alur",
-            affiliation: "University of Pennsylvania",
-            image: "assets/rajeev-alur.jpg",
-            website: "https://www.cis.upenn.edu/~alur/"
+          time: "09:15 - 10:00",
+          title: "Algorithms & Formal Methods",
+          isBreak: false,
+          talks: [
+            {
+              title: "TBA",
+              speakers: ["devavrat-shah"],
+              abstract: "",
+            },
+            {
+              title: "TBA",
+              speakers: ["ashutosh-trivedi"],
+              abstract: "",
+            },
+          ],
         },
         {
-            anchor: "ashutosh-trivedi",
-            name: "Ashutosh Trivedi",
-            affiliation: "University of Colorado Boulder",
-            image: "assets/ashutosh-trivedi.jpg",
-            website: "http://ashutoshtrivedi.com/"
+          time: "10:00 - 10:30",
+          title: "Tea break",
+          isBreak: true,
         },
         {
-            anchor: "diptarka-chakraborty",
-            name: "Diptarka Chakraborty",
-            affiliation: "National University of Singapore",
-            image: "assets/diptarka-chakraborty.jpg",
-            website: "https://sites.google.com/view/diptarka"
+          time: "10:30 - 12:00",
+          title: "Algorithms & Formal Methods",
+          isBreak: false,
+          talks: [
+            {
+              title: "TBA",
+              speakers: ["diptarka-chakraborty"],
+              abstract: "",
+            },
+            {
+              title: "TBA",
+              speakers: ["chandra-chekuri"],
+              abstract: "",
+            },
+          ],
         },
         {
-            anchor: "chandra-chekuri",
-            name: "Chandra Chekuri",
-            affiliation: "University of Illinois Urbana-Champaign",
-            image: "assets/chandra-chekuri.jpg",
-            website: "https://chekuri.cs.illinois.edu/"
+          time: "12:00 - 13:30",
+          title: "Lunch",
+          isBreak: true,
         },
         {
-            anchor: "aditya-gopalan",
-            name: "Aditya Gopalan",
-            affiliation: "Indian Institute of Science, Bengaluru",
-            image: "assets/aditya-gopalan.jpg",
-            website: "https://ece.iisc.ac.in/~aditya/"
+          time: "13:30 - 16:00",
+          title: "Commemorative session on Prof. Narasimhan",
+          isBreak: false,
         },
         {
-            anchor: "preeti-rao",
-            name: "Preeti Rao",
-            affiliation: "Indian Institute of Technology Bombay",
-            image: "assets/preeti-rao.webp",
-            website: "https://www.ee.iitb.ac.in/people/faculty/preeti-rao/"
+          time: "16:00 - 17:30",
+          title: "Student poster session and tea break",
+          isBreak: false,
         },
         {
-            anchor: "devavrat-shah",
-            name: "Devavrat Shah",
-            affiliation: "Massachusetts Institute of Technology",
-            image: "assets/devavrat-shah.jpg",
-            website: "https://devavrat.mit.edu/"
+          time: "17:30 - 19:00",
+          title: "Public lecture: Trustworthy AI for Clinical Decision Making",
+          speakers: ["rajeev-alur"],
+          isBreak: false,
+        },
+      ],
+    },
+    {
+      day: "Friday, 11 December 2026",
+      sessions: [
+        {
+          time: "09:30 - 11:00",
+          title: "Complexity & Cryptography",
+          isBreak: false,
+          talks: [
+            {
+              title: "TBA",
+              speakers: ["benny-applebaum"],
+              abstract: "",
+            },
+            {
+              title: "TBA",
+              speakers: ["srikanth-srinivasan"],
+              abstract: "",
+            },
+          ],
         },
         {
-            anchor: "cm-chandrashekar",
-            name: "C M Chandrashekar",
-            affiliation: "Institute of Mathematical Sciences / TIFR",
-            image: "assets/cm-chandrashekar.jpg",
-            website: ""
+          time: "11:00 - 11:30",
+          title: "Tea break",
+          isBreak: true,
         },
         {
-            anchor: "benny-applebaum",
-            name: "Benny Applebaum",
-            affiliation: "Tel Aviv University",
-            image: "assets/benny-applebaum.jpg",
-            website: "https://bennyapplebaum.sites.tau.ac.il/"
+          time: "11:30 - 13:00",
+          title: "Complexity & Cryptography",
+          isBreak: false,
+          talks: [
+            {
+              title: "TBA",
+              speakers: ["rohit-gurjar"],
+              abstract: "",
+            },
+            {
+              title: "TBA",
+              speakers: ["TBD"],
+              abstract: "",
+            },
+          ],
         },
         {
-            anchor: "srikanth-srinivasan",
-            name: "Srikanth Srinivasan",
-            affiliation: "University of Copenhagen",
-            image: "assets/srikanth-srinivasan.jpg",
-            website: "https://srikanth-srinivasan.bitbucket.io/"
+          time: "13:00 - 14:00",
+          title: "Lunch",
+          isBreak: true,
         },
         {
-            anchor: "rohit-gurjar",
-            name: "Rohit Gurjar",
-            affiliation: "Indian Institute of Technology Bombay",
-            image: "assets/rohit-gurjar.jpg",
-            website: "https://www.cse.iitb.ac.in/~rgurjar/"
-        }
-    ],
-    sponsors: [
-        {
-            name: "The Professor R. Narasimhan Endowment",
-            logo: "",
-            logoDark: "",
-            url: "https://www.tifr.res.in/endowment/prof-r-narasimhan-lecture-award.htm",
-            subtitle: "Established by the family of Prof. R. Narasimhan and The Bharat Family Fund"
+          time: "14:00 - 15:30",
+          title: "AI, ML & Quantum",
+          isBreak: false,
+          talks: [
+            {
+              title: "TBA",
+              speakers: ["preeti-rao"],
+              abstract: "",
+            },
+            {
+              title: "TBA",
+              speakers: ["aditya-gopalan"],
+              abstract: "",
+            },
+          ],
         },
         {
-            name: "Tata Consultancy Services",
-            logo: "assets/TCS-logo-black.svg",
-            logoDark: "assets/TCS-logo-white.svg",
-            url: "https://www.tcs.com/",
-            subtitle: ""
-        }
-    ],
+          time: "15:30 - 16:00",
+          title: "Tea break",
+          isBreak: true,
+        },
+        {
+          time: "16:00 - 17:30",
+          title: "AI, ML & Quantum",
+          isBreak: false,
+          talks: [
+            {
+              title: "TBA",
+              speakers: ["cm-chandrashekar"],
+              abstract: "",
+            },
+            {
+              title: "TBA",
+              speakers: ["TBD"],
+              abstract: "",
+            },
+          ],
+        },
+      ],
+    },
+  ],
+  speakers: [
+    {
+      anchor: "rajeev-alur",
+      name: "Rajeev Alur",
+      affiliation: "University of Pennsylvania",
+      image: "assets/rajeev-alur.jpg",
+      website: "https://www.cis.upenn.edu/~alur/",
+    },
+    {
+      anchor: "ashutosh-trivedi",
+      name: "Ashutosh Trivedi",
+      affiliation: "University of Colorado Boulder",
+      image: "assets/ashutosh-trivedi.jpg",
+      website: "http://ashutoshtrivedi.com/",
+    },
+    {
+      anchor: "diptarka-chakraborty",
+      name: "Diptarka Chakraborty",
+      affiliation: "National University of Singapore",
+      image: "assets/diptarka-chakraborty.jpg",
+      website: "https://sites.google.com/view/diptarka",
+    },
+    {
+      anchor: "chandra-chekuri",
+      name: "Chandra Chekuri",
+      affiliation: "University of Illinois Urbana-Champaign",
+      image: "assets/chandra-chekuri.jpg",
+      website: "https://chekuri.cs.illinois.edu/",
+    },
+    {
+      anchor: "aditya-gopalan",
+      name: "Aditya Gopalan",
+      affiliation: "Indian Institute of Science, Bengaluru",
+      image: "assets/aditya-gopalan.jpg",
+      website: "https://ece.iisc.ac.in/~aditya/",
+    },
+    {
+      anchor: "preeti-rao",
+      name: "Preeti Rao",
+      affiliation: "Indian Institute of Technology Bombay",
+      image: "assets/preeti-rao.webp",
+      website: "https://www.ee.iitb.ac.in/people/faculty/preeti-rao/",
+    },
+    {
+      anchor: "devavrat-shah",
+      name: "Devavrat Shah",
+      affiliation: "Massachusetts Institute of Technology",
+      image: "assets/devavrat-shah.jpg",
+      website: "https://devavrat.mit.edu/",
+    },
+    {
+      anchor: "cm-chandrashekar",
+      name: "C M Chandrashekar",
+      affiliation: "Institute of Mathematical Sciences / TIFR",
+      image: "assets/cm-chandrashekar.jpg",
+      website: "",
+    },
+    {
+      anchor: "benny-applebaum",
+      name: "Benny Applebaum",
+      affiliation: "Tel Aviv University",
+      image: "assets/benny-applebaum.jpg",
+      website: "https://bennyapplebaum.sites.tau.ac.il/",
+    },
+    {
+      anchor: "srikanth-srinivasan",
+      name: "Srikanth Srinivasan",
+      affiliation: "University of Copenhagen",
+      image: "assets/srikanth-srinivasan.jpg",
+      website: "https://srikanth-srinivasan.bitbucket.io/",
+    },
+    {
+      anchor: "rohit-gurjar",
+      name: "Rohit Gurjar",
+      affiliation: "Indian Institute of Technology Bombay",
+      image: "assets/rohit-gurjar.jpg",
+      website: "https://www.cse.iitb.ac.in/~rgurjar/",
+    },
+  ],
+  sponsors: [
+    {
+      name: "The Professor R. Narasimhan Endowment",
+      logo: "",
+      logoDark: "",
+      url: "https://www.tifr.res.in/endowment/prof-r-narasimhan-lecture-award.htm",
+      subtitle:
+        "Established by the family of Prof. R. Narasimhan and The Bharat Family Fund",
+    },
+    {
+      name: "Tata Consultancy Services",
+      logo: "assets/TCS-logo-black.svg",
+      logoDark: "assets/TCS-logo-white.svg",
+      url: "https://www.tcs.com/",
+      subtitle: "",
+    },
+  ],
 };
