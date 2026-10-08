@@ -70,11 +70,19 @@
                         `;
                     }
 
+                    let bioBlock = "";
+                    if (talk.bio && talk.bio.trim() !== "") {
+                        bioBlock = `
+                            <div class="subtalk-bio-body"><strong>Bio:</strong> ${talk.bio}</div>
+                        `;
+                    }
+
                     talksHTML += `
                         <div class="subtalk-item">
                             <div class="subtalk-title"><strong>${talk.title}</strong></div>
                             ${talkSpeaker}
                             ${abstractBlock}
+                            ${bioBlock}
                         </div>
                     `;
                 });

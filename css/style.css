@@ -1358,6 +1358,9 @@ body::before {
 .subtalk-item {
   font-size: 0.9rem;
   line-height: 1.45;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
 }
 
 .subtalk-title {
@@ -1369,7 +1372,6 @@ body::before {
 .subtalk-speaker {
   font-size: 0.84rem;
   color: var(--text-muted);
-  margin-top: 0.15rem;
 }
 
 .subtalk-speaker a {
@@ -1378,7 +1380,7 @@ body::before {
 
 /* Collapsible Abstract */
 .subtalk-abstract-details {
-  margin-top: 0.25rem;
+  margin: 0;
 }
 
 .subtalk-abstract-details summary {
