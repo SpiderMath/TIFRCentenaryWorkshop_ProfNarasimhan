@@ -62,8 +62,8 @@ def ask_title(current=None):
         print("The title cannot be empty.")
 
 
-def ask_abstract():
-    print("Enter the abstract. Type .done on its own line when finished.")
+def ask_multiline(field):
+    print(f"Enter the {field}. Type .done on its own line when finished.")
     lines = []
     while True:
         line = ask("> ")
@@ -72,14 +72,14 @@ def ask_abstract():
         lines.append(line)
 
 
-def edit_abstract(current):
-    print(f"\nCurrent abstract:\n{current or '(empty)'}")
-    action = choose("Abstract", ["Keep current", "Replace", "Clear"], default=0)
+def edit_multiline(field, current):
+    print(f"\nCurrent {field}:\n{current or '(empty)'}")
+    action = choose(field.title(), ["Keep current", "Replace", "Clear"], default=0)
     if action == 0:
         return current
     if action == 2:
         return ""
-    return ask_abstract()
+    return ask_multiline(field)
 
 
 def choose_speakers(directory, current=None):
@@ -208,6 +208,7 @@ def parse_talk(block):
         "title": read_string_property(block, "title"),
         "speakers": speakers,
         "abstract": read_string_property(block, "abstract", default=""),
+        "bio": read_string_property(block, "bio", default=""),
     }
 
 
@@ -332,12 +333,18 @@ def render_talks(talks, indentation):
     property_indent = object_indent + "  "
     objects = []
     for talk in talks:
+        bio = (
+            f"{property_indent}bio: {js_string(talk['bio'])},\n"
+            if talk["bio"]
+            else ""
+        )
         objects.append(
             f"{object_indent}{{\n"
             f"{property_indent}title: {js_string(talk['title'])},\n"
             f"{property_indent}speakers: "
             f"[{', '.join(js_string(value) for value in talk['speakers'])}],\n"
             f"{property_indent}abstract: {js_string(talk['abstract'])},\n"
+            f"{bio}"
             f"{object_indent}}},"
         )
     return "[\n" + "\n".join(objects) + f"\n{indentation}]"
@@ -380,15 +387,16 @@ def main():
         ]
         title = ask_title()
         speakers = choose_speakers(directory)
-        abstract = ask_abstract()
-        new_talk = {"title": title, "speakers": speakers, "abstract": abstract}
+        abstract = ask_multiline("abstract")
+        bio = ask_multiline("bio")
         changed = [destination]
     else:
         source_session, talk_index = choose_talk_to_edit(sessions, directory)
         old_talk = source_session["talks"][talk_index]
         title = ask_title(old_talk["title"])
         speakers = choose_speakers(directory, old_talk["speakers"])
-        abstract = edit_abstract(old_talk["abstract"])
+        abstract = edit_multiline("abstract", old_talk["abstract"])
+        bio = edit_multiline("bio", old_talk["bio"])
         current_slot = sessions.index(source_session)
         destination = sessions[
             choose(
@@ -397,8 +405,14 @@ def main():
                 default=current_slot,
             )
         ]
-        new_talk = {"title": title, "speakers": speakers, "abstract": abstract}
         changed = [source_session, destination]
+
+    new_talk = {
+        "title": title,
+        "speakers": speakers,
+        "abstract": abstract,
+        "bio": bio,
+    }
 
     print("\nReview")
     print(f"  Schedule: {slot_label(destination)}")
@@ -408,6 +422,7 @@ def main():
         + ", ".join(speaker_name(value, directory) for value in speakers)
     )
     print(f"  Abstract: {abstract or '(empty)'}")
+    print(f"  Bio: {bio or '(empty)'}")
     if not confirm():
         raise Cancelled
 

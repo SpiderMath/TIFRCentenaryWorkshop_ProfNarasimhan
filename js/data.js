@@ -102,9 +102,12 @@ const workshopData = {
           isBreak: false,
           talks: [
             {
-              title: "A Deterministic Parallel Algorithm for Bipartite Matching",
+              title:
+                "A Deterministic Parallel Algorithm for Bipartite Matching",
               speakers: ["rohit-gurjar"],
-              abstract: "The bipartite matching problem is one of the most extensively studied problems in algorithms and complexity theory. Beyond numerous practical applications such as assigning suitable tasks to machines, its study has led to several influential ideas in the field. In this talk, we will review the history of the problem from the perspective of parallel algorithms and present a recent result that gives the first deterministic parallel algorithm for it, settling a question that had remained open for more than four decades.\n\nBased on joint work with Abhranil Chatterjee, Sumanta Ghosh, Roshan Raj, and Thomas Thierauf",
+              abstract:
+                "The bipartite matching problem is one of the most extensively studied problems in algorithms and complexity theory. Beyond numerous practical applications such as assigning suitable tasks to machines, its study has led to several influential ideas in the field. In this talk, we will review the history of the problem from the perspective of parallel algorithms and present a recent result that gives the first deterministic parallel algorithm for it, settling a question that had remained open for more than four decades.\n\nBased on joint work with Abhranil Chatterjee, Sumanta Ghosh, Roshan Raj, and Thomas Thierauf.",
+              bio: "Rohit Gurjar is a faculty member in the CSE department at IIT Bombay since 2018. His research interests center on theoretical computer science, specifically Computational Complexity, Derandomization, Polyhedral Combinatorics, and Parallel Complexity. In particular, he has worked on the polynomial identity testing, bipartite matching and related combinatorial problems. Before joining IITB, he did his postdocs at the University of Ulm (Germany), Tel Aviv University (Israel), and Caltech (USA), and obtained his Ph.D. from IIT Kanpur.",
             },
             {
               title: "TBA",
