@@ -83,7 +83,10 @@ def edit_abstract(current):
 
 
 def choose_speakers(directory, current=None):
-    options = [f"{speaker['name']} ({speaker['anchor']})" for speaker in directory]
+    sorted_directory = sorted(directory, key=lambda speaker: speaker["name"].casefold())
+    options = [
+        f"{speaker['name']} ({speaker['anchor']})" for speaker in sorted_directory
+    ]
     options += ["TBD", "Custom speaker"]
 
     print("\nSelect speaker(s). Use commas for multiple speakers.")
@@ -116,9 +119,9 @@ def choose_speakers(directory, current=None):
         speakers = []
         for number in selected_numbers:
             index = number - 1
-            if index < len(directory):
-                speakers.append(directory[index]["anchor"])
-            elif index == len(directory):
+            if index < len(sorted_directory):
+                speakers.append(sorted_directory[index]["anchor"])
+            elif index == len(sorted_directory):
                 speakers.append("TBD")
             else:
                 custom = ask("Custom speaker name: ").strip()
@@ -286,6 +289,8 @@ def choose_talk_by_speaker(sessions, directory):
             for speaker in talk["speakers"]:
                 if speaker not in speaker_ids:
                     speaker_ids.append(speaker)
+
+    speaker_ids.sort(key=lambda speaker: speaker_name(speaker, directory).casefold())
 
     selected = speaker_ids[
         choose(
