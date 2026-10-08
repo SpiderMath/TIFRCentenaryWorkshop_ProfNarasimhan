@@ -66,6 +66,7 @@
             <div class="sponsors-grid">
                 ${cardsHTML}
             </div>
+<br><center>We also gratefully acknowledge individual contributions from Prof. Narasimhan's friends and associates.</center>
         </section>
     `;
 })();
