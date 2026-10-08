@@ -287,14 +287,14 @@ a:focus {
 /* Programme Page Layout */
 .programme-header {
   margin-bottom: 2rem;
-  padding-bottom: 1.25rem;
+  padding-bottom: 1rem;
   border-bottom: 1px solid var(--border-color);
 }
 
 .page-title {
   font-size: 1.85rem;
   color: var(--color-tifr-blue);
-  margin-bottom: 0.35rem;
+  margin-bottom: 1rem;
 }
 
 [data-theme="dark"] .page-title {
@@ -308,6 +308,10 @@ a:focus {
   gap: 0.6rem;
   color: var(--text-muted);
   font-size: 0.92rem;
+  margin-bottom: 1rem;
+}
+
+.programme-meta {
   margin-bottom: 1rem;
 }
 
@@ -330,6 +334,11 @@ a:focus {
   padding: 0.5rem 1rem;
   margin-bottom: 1rem;
   border-radius: 3px;
+}
+
+.programme-header > :last-child,
+.home-hero > :last-child {
+  margin-bottom: 0;
 }
 
 .section-jump-nav span {
@@ -930,7 +939,7 @@ body::before {
 /* Home Hero Section */
 .home-hero {
   margin-bottom: 2.25rem;
-  padding-bottom: 1.25rem;
+  padding-bottom: 1rem;
   border-bottom: 1px solid var(--border-color);
 }
 
@@ -947,7 +956,7 @@ body::before {
   font-size: 2.1rem;
   line-height: 1.25;
   color: var(--color-tifr-blue);
-  margin-bottom: 0.85rem;
+  margin-bottom: 1rem;
 }
 
 [data-theme="dark"] .hero-title {
