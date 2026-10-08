@@ -230,7 +230,8 @@ python3 scripts/manage_talks.py
 It prompts you to add or edit a talk, select one of the supported thematic time
 slots, choose one or more speakers, enter the title and abstract, review the
 change, and confirm before updating `js/data.js`. An edited talk can also be
-moved to another supported slot. Abstracts can span multiple lines; enter
+moved to another supported slot. You can find a talk by its schedule slot or
+speaker. Abstracts can span multiple lines; enter
 `.done` on its own line to finish. Enter `q` at a selection prompt to cancel.
 
 ---

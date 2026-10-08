@@ -269,6 +269,56 @@ def talk_label(talk, directory):
     return f"{talk['title']} | {', '.join(names)}"
 
 
+def choose_talk_by_slot(sessions, directory):
+    session = sessions[
+        choose("Choose the current schedule slot", [slot_label(slot) for slot in sessions])
+    ]
+    talk_index = choose(
+        "Choose the talk", [talk_label(talk, directory) for talk in session["talks"]]
+    )
+    return session, talk_index
+
+
+def choose_talk_by_speaker(sessions, directory):
+    speaker_ids = []
+    for session in sessions:
+        for talk in session["talks"]:
+            for speaker in talk["speakers"]:
+                if speaker not in speaker_ids:
+                    speaker_ids.append(speaker)
+
+    selected = speaker_ids[
+        choose(
+            "Choose the speaker",
+            [speaker_name(speaker, directory) for speaker in speaker_ids],
+        )
+    ]
+    matches = [
+        (session, index)
+        for session in sessions
+        for index, talk in enumerate(session["talks"])
+        if selected in talk["speakers"]
+    ]
+    if len(matches) == 1:
+        return matches[0]
+
+    match_index = choose(
+        "Choose the talk",
+        [
+            f"{talk_label(session['talks'][index], directory)} | {slot_label(session)}"
+            for session, index in matches
+        ],
+    )
+    return matches[match_index]
+
+
+def choose_talk_to_edit(sessions, directory):
+    method = choose("Find the talk by", ["Schedule slot", "Speaker"])
+    if method == 0:
+        return choose_talk_by_slot(sessions, directory)
+    return choose_talk_by_speaker(sessions, directory)
+
+
 def render_talks(talks, indentation):
     if not talks:
         return "[]"
@@ -329,12 +379,7 @@ def main():
         new_talk = {"title": title, "speakers": speakers, "abstract": abstract}
         changed = [destination]
     else:
-        source_session = sessions[
-            choose("Choose the current schedule slot", [slot_label(slot) for slot in sessions])
-        ]
-        talk_index = choose(
-            "Choose the talk", [talk_label(talk, directory) for talk in source_session["talks"]]
-        )
+        source_session, talk_index = choose_talk_to_edit(sessions, directory)
         old_talk = source_session["talks"][talk_index]
         title = ask_title(old_talk["title"])
         speakers = choose_speakers(directory, old_talk["speakers"])
