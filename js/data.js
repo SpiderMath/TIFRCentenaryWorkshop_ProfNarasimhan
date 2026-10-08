@@ -215,7 +215,7 @@ const workshopData = {
       name: "C M Chandrashekar",
       affiliation: "Institute of Mathematical Sciences / TIFR",
       image: "assets/cm-chandrashekar.jpg",
-      website: "",
+      website: "https://www.imsc.res.in/~chandru/",
     },
     {
       anchor: "benny-applebaum",
