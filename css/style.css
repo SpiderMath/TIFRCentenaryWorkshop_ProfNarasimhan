@@ -1393,8 +1393,7 @@ body::before {
   text-decoration: underline;
 }
 
-.subtalk-abstract-body,
-.subtalk-bio-body {
+.subtalk-abstract-body {
   margin-top: 0.35rem;
   padding: 0.5rem 0.75rem;
   background-color: var(--bg-page);
