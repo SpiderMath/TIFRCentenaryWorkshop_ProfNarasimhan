@@ -147,7 +147,8 @@ Individual talks inside an umbrella block do not have individual timestamps; the
 ```
 
 * `id`: Internal identifier string.
-* `tag`: Small colored badge text (e.g., "Notice", "Update", "Alert").
+* `tag`: Optional small colored badge text (e.g., "Notice", "Update", "Alert"). Omit it to hide the badge.
+* `title`: Optional heading displayed above the notice message.
 * `html`: Message string. Supports standard HTML tags like `<a>`, `<strong>`, and `<em>`.
 * `active`: Set to `true` to display, `false` to turn off globally.
 * `pages`: Set booleans to decide exactly which pages show the notice. Up to 3 active notices are shown per page.
