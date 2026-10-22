@@ -32,12 +32,12 @@
   --bg-page: #0F172A;
   --bg-surface: #1E293B;
   --text-main: #F8FAFC;
-  --text-muted: #94A3B8;
+  --text-muted: #CBD5E1;
   --border-color: #334155;
   --nav-bg: #0F172A;
   --footer-bg: #090D16;
   --footer-text: #F8FAFC;
-  --footer-muted: #94A3B8;
+  --footer-muted: #CBD5E1;
 }
 
 /* Reset and base typography */
@@ -1486,7 +1486,6 @@ body::before {
 
 [data-theme="dark"] .subtalk-abstract-body {
   background-color: var(--bg-surface);
-  color: #CBD5E1;
 }
 
 /* Sponsorship & Institutional Support Grid */
