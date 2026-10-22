@@ -253,11 +253,11 @@ a:focus-visible {
     margin-top: 0.35rem;
     font-size: 0.78rem;
     color: var(--footer-muted);
-    opacity: 0.85;
 }
 
 .footer-credit a {
-    color: var(--footer-muted);
+    color: #93c5fd;
+    font-weight: 600;
 }
 
 .footer-credit a:hover,
