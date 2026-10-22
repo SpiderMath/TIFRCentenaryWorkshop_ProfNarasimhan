@@ -616,7 +616,7 @@ a:focus-visible {
 
 [data-theme="dark"] .btn-primary {
   background-color: var(--color-accent-blue);
-  color: var(--bg-page);
+  color: #ffffff;
 }
 
 [data-theme="dark"] .btn-primary:hover {
