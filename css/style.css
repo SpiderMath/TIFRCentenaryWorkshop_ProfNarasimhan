@@ -500,11 +500,18 @@ a:focus-visible {
   border: 1px solid var(--border-color);
   border-radius: 4px;
   text-decoration: none;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
 }
 
 .speaker-web-pill:hover,
 .speaker-web-pill:focus {
   color: var(--color-accent-blue);
+  text-decoration: none;
+}
+
+.speaker-web-pill:hover {
+  border-color: var(--color-accent-blue);
+  background-color: var(--bg-surface);
 }
 
 .speaker-web-pill svg {
