@@ -1487,8 +1487,6 @@ body::before {
 [data-theme="dark"] .subtalk-abstract-body {
   background-color: var(--bg-surface);
   color: #CBD5E1;
-  font-size: 0.9rem;
-  line-height: 1.6;
 }
 
 /* Sponsorship & Institutional Support Grid */
