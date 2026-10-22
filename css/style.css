@@ -9,7 +9,7 @@
   
   --color-tifr-blue: #2C61C8;
   --color-accent-blue: #1A439B;      /* we need high contrast for small text/links on white */
-  --color-accent-hover: #122F70;     /* for strong contrast on hover (found by brute forcing, prolly could improve?) */
+  --color-accent-hover: #0067D9;     /* Brighter blue keeps hover distinct and readable */
 
   /* Light Theme Surfaces & Text */
   --bg-page: #FDFDFD;                /* Official TIFR Off-White, yet again! */
@@ -26,7 +26,7 @@
 [data-theme="dark"] {
   --color-tifr-blue: #38BDF8;
   --color-accent-blue: #38BDF8;      /* Bright blue meeting 4.5:1+ against dark bg */
-  --color-accent-hover: #7DD3FC;
+  --color-accent-hover: #AAC7FF;
 
   /* Dark Theme Surfaces & Text */
   --bg-page: #0F172A;
@@ -68,11 +68,17 @@ main {
 a {
   color: var(--color-accent-blue);
   text-decoration: none;
+  transition: color 0.2s ease;
 }
 
 a:hover,
 a:focus {
-  text-decoration: underline;
+  color: var(--color-accent-hover);
+}
+
+a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
 }
 
 /* Navbar */
@@ -124,11 +130,15 @@ a:focus {
   padding: 0.35rem 0;
 }
 
-.nav-menu a:hover,
 .nav-menu a.active {
   color: var(--color-accent-blue);
-  text-decoration: none;
-  border-bottom: 2px solid var(--color-accent-blue);
+  border-bottom: 2px solid currentColor;
+}
+
+.nav-menu a:hover,
+.nav-menu a:focus-visible {
+  color: var(--color-accent-hover);
+  border-bottom: 2px solid currentColor;
 }
 
 /* Theme button: permanently visible on desktop and mobile */
@@ -224,8 +234,9 @@ a:focus {
   color: #93c5fd;
 }
 
-.footer-col a:hover {
-  text-decoration: underline;
+.footer-col a:hover,
+.footer-col a:focus-visible {
+  color: #ffffff;
 }
 
 .footer-bottom {
@@ -247,10 +258,10 @@ a:focus {
 
 .footer-credit a {
     color: var(--footer-muted);
-    text-decoration: underline;
 }
 
-.footer-credit a:hover {
+.footer-credit a:hover,
+.footer-credit a:focus-visible {
     color: #ffffff;
 }
 
@@ -600,7 +611,7 @@ a:focus {
 
 [data-theme="dark"] .btn-primary {
   background-color: var(--color-accent-blue);
-  color: #ffffff;
+  color: var(--bg-page);
 }
 
 [data-theme="dark"] .btn-primary:hover {
@@ -976,11 +987,10 @@ body::before {
 .announcement-text a {
   color: var(--color-accent-blue);
   font-weight: 500;
-  text-decoration: underline;
-  text-underline-offset: 3px;
 }
 
-.announcement-text a:hover {
+.announcement-text a:hover,
+.announcement-text a:focus-visible {
   color: var(--color-accent-hover);
 }
 
@@ -1432,6 +1442,13 @@ body::before {
   color: var(--color-accent-blue);
 }
 
+.timetable-speaker a:hover,
+.timetable-speaker a:focus-visible,
+.subtalk-speaker a:hover,
+.subtalk-speaker a:focus-visible {
+  color: var(--color-accent-hover);
+}
+
 /* Collapsible Abstract */
 .subtalk-abstract-details {
   margin-top: 0.25rem;
@@ -1445,8 +1462,9 @@ body::before {
   display: inline-block;
 }
 
-.subtalk-abstract-details summary:hover {
-  text-decoration: underline;
+.subtalk-abstract-details summary:hover,
+.subtalk-abstract-details summary:focus-visible {
+  color: var(--color-accent-hover);
 }
 
 .subtalk-abstract-body {
@@ -1545,6 +1563,11 @@ body::before {
   color: #93c5fd;
 }
 
+.sponsor-card:hover .sponsor-card-title,
+.sponsor-card:focus-visible .sponsor-card-title {
+  color: var(--color-accent-hover);
+}
+
 .sponsor-card-sub {
   font-size: 0.82rem;
   color: var(--text-muted);
@@ -1625,13 +1648,15 @@ body::before {
   line-height: 1.4;
 }
 
-.reference-title:hover {
-  text-decoration: underline;
-  color: var(--color-accent-blue);
-}
-
 [data-theme="dark"] .reference-title {
   color: #93c5fd;
+}
+
+.reference-title:hover,
+.reference-title:focus-visible,
+[data-theme="dark"] .reference-title:hover,
+[data-theme="dark"] .reference-title:focus-visible {
+  color: var(--color-accent-hover);
 }
 
 .reference-title .external-arrow {
