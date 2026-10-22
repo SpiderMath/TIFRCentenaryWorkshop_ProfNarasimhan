@@ -1488,6 +1488,14 @@ body::before {
   background-color: var(--bg-surface);
 }
 
+.subtalk-bio-body {
+  color: var(--text-muted);
+}
+
+.subtalk-bio-body > strong:first-child {
+  color: var(--text-main);
+}
+
 /* Sponsorship & Institutional Support Grid */
 .sponsors-section {
     margin-top: 3.5rem;
