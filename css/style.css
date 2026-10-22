@@ -756,7 +756,7 @@ body::before {
   pointer-events: none;
 
   /* Path to the chosen archival image */
-  background-image: url("../assets/narasimhan-at-tifr-1.jpg");
+  background-image: url("../assets/narasimhan-at-tifr-1.webp");
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;

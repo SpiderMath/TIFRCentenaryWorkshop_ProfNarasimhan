@@ -115,7 +115,7 @@ Individual talks inside an umbrella block do not have individual timestamps; the
     anchor: "chandra-chekuri",
     name: "Chandra Chekuri",
     affiliation: "University of Illinois Urbana-Champaign",
-    image: "assets/chandra-chekuri.jpg",
+    image: "assets/chandra-chekuri.webp",
     website: "[https://chekuri.cs.illinois.edu/](https://chekuri.cs.illinois.edu/)"
 }
 
