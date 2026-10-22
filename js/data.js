@@ -36,9 +36,9 @@ const workshopData = {
           isBreak: false,
           talks: [
             {
-              title: "TBA",
+              title: "Fair Clustering and Consensus",
               speakers: ["diptarka-chakraborty"],
-              abstract: "",
+              abstract: "Clustering is a fundamental task in data analysis, but the resulting clusters may not ensure fair representation of different population groups. In this talk, I will discuss a series of works investigating how to incorporate fairness into clustering while preserving the quality of the solution. We first consider the problem ofmodifying an existing clustering to ensure proportional representation of different groups while making minimal changes. We explore the computational challenges of this problem and develop efficient approximation algorithms, extending from two groups to arbitrarily many groups. Building on these results, we study how to combine multiple clusterings into a single fair consensus. Finally, we investigate how to achieve fair consensus efficiently in large-scale settings where clusterings arrive sequentially, and memory is limited.",
             },
             {
               title: "TBA",
