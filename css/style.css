@@ -424,6 +424,11 @@ a:focus-visible {
   color: var(--text-main);
 }
 
+.lecture-title-link svg {
+  margin-left: 0.2rem;
+  vertical-align: middle;
+}
+
 .timetable-speaker {
   margin-top: 0.2rem;
   font-size: 0.85rem;
@@ -849,6 +854,7 @@ body::before {
 }
 
 .speaker-profile-media {
+  align-self: center;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1427,6 +1433,9 @@ body::before {
 }
 
 .subtalk-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
   font-size: 0.9rem;
   line-height: 1.45;
 }
@@ -1440,7 +1449,6 @@ body::before {
 .subtalk-speaker {
   font-size: 0.84rem;
   color: var(--text-muted);
-  margin-top: 0.15rem;
 }
 
 .subtalk-speaker a {
@@ -1459,12 +1467,17 @@ body::before {
   margin-top: 0.25rem;
 }
 
+.subtalk-item > .subtalk-abstract-details {
+  margin-top: 0;
+}
+
 .subtalk-abstract-details summary {
   font-size: 0.78rem;
   color: var(--color-accent-blue);
   cursor: pointer;
   user-select: none;
-  display: inline-block;
+  display: block;
+  width: fit-content;
 }
 
 .subtalk-abstract-details summary:hover,

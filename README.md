@@ -69,6 +69,7 @@ The `workshopData.schedule` array groups sessions by day. Each session entry fol
     time: "17:30 - 19:00",
     title: "Public lecture: Trustworthy AI for Clinical Decision Making",
     speakers: ["rajeev-alur"],
+    publicLectureUrl: "public-lecture.html",
     isBreak: false
 }
 
@@ -78,6 +79,7 @@ The `workshopData.schedule` array groups sessions by day. Each session entry fol
 * `title`: Name of the session.
 * `speakers`: (Optional) Array of speaker anchor slugs matching entries in `workshopData.speakers`. Can also take a plain string for unlisted guests (e.g. `["Prof. S. Ramakrishnan"]`).
 * `isBreak`: Boolean (`true` or `false`). When `true`, styles the row with subtle muted italic text.
+* `publicLectureUrl`: (Optional) Makes the session title and its trailing link icon a single link to the dedicated public lecture page. The session abstract is omitted from the programme page.
 
 #### Format B: Umbrella Thematic Session (Grouped Sub-Talks)
 

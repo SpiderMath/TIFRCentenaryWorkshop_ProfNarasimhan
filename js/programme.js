@@ -40,6 +40,19 @@
         return `<div class="${cssClass}">${label}: ${renderedSpeakers.join(", ")}</div>`;
     }
 
+    function renderAbstract(item) {
+        if (!item.abstract || item.abstract.trim() === "") {
+            return "";
+        }
+
+        return `
+            <details class="subtalk-abstract-details">
+                <summary>Abstract</summary>
+                <div class="subtalk-abstract-body">${item.abstract}</div>
+            </details>
+        `;
+    }
+
     // 2. Render Timetable Schedule
     let scheduleHTML = "";
     workshopData.schedule.forEach(function (dayGroup) {
@@ -53,22 +66,21 @@
         dayGroup.sessions.forEach(function (session) {
             const rowClass = session.isBreak ? ' class="break-row"' : "";
             const sessionSpeakerLine = renderSpeakerLine(session, "timetable-speaker");
+            const sessionTitle = session.publicLectureUrl ? `
+                <a class="lecture-title-link" href="${session.publicLectureUrl}">
+                    ${session.title}
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                        <path d="M15 3h6v6M10 14 21 3" />
+                        <path d="M21 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5" />
+                    </svg>
+                </a>
+            ` : session.title;
 
             let talksHTML = "";
             if (session.talks && session.talks.length > 0) {
                 talksHTML += '<div class="subtalks-list">';
                 session.talks.forEach(function (talk) {
                     const talkSpeaker = renderSpeakerLine(talk, "subtalk-speaker");
-
-                    let abstractBlock = "";
-                    if (talk.abstract && talk.abstract.trim() !== "") {
-                        abstractBlock = `
-                            <details class="subtalk-abstract-details">
-                                <summary>Abstract</summary>
-                                <div class="subtalk-abstract-body">${talk.abstract}</div>
-                            </details>
-                        `;
-                    }
 
                     let bioBlock = "";
                     if (talk.bio && talk.bio.trim() !== "") {
@@ -81,7 +93,7 @@
                         <div class="subtalk-item">
                             <div class="subtalk-title"><strong>${talk.title}</strong></div>
                             ${talkSpeaker}
-                            ${abstractBlock}
+                            ${renderAbstract(talk)}
                             ${bioBlock}
                         </div>
                     `;
@@ -93,8 +105,9 @@
                 <tr${rowClass}>
                     <td class="timetable-time">${session.time || ""}</td>
                     <td class="timetable-content">
-                        <div class="timetable-title${session.talks && session.talks.length ? ' umbrella-title' : ''}">${session.title}</div>
+                        <div class="timetable-title${session.talks && session.talks.length ? ' umbrella-title' : ''}">${sessionTitle}</div>
                         ${sessionSpeakerLine}
+                        ${session.publicLectureUrl ? "" : renderAbstract(session)}
                         ${talksHTML}
                     </td>
                 </tr>
