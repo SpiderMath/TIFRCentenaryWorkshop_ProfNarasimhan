@@ -5,9 +5,22 @@
     const siteNotices = [
         {
             id: "poster-extension",
+            title: "Poster Submission is now closed",
+            html: `<p>The student poster submission has <strong>concluded</strong>. Selected students will be informed by email soon.</p>`,
+            active: true,
+            pages: {
+                home: true,
+                programme: false,
+                participate: false,
+                publicLecture: false,
+                remembering: false
+            }
+        },
+        {
+            id: "poster-extension",
             title: "Poster Submission deadline extended",
             html: `<p>The student poster submission deadline has been extended to <strong><time datetime="2026-10-30">October 30, 2026</time></strong>.
-                <a class="announcement-submit" href="participate.html#engagement-tracks">Submit
+                <a class="announcement-submit">Submit
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
                         <path d="M15 3h6v6M10 14 21 3"></path>
                         <path d="M21 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5"></path>

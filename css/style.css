@@ -628,6 +628,16 @@ a:focus-visible {
   background-color: var(--color-accent-hover);
 }
 
+/* Add this below your existing .btn-primary CSS */
+.btn-primary.disabled,
+.btn-primary[disabled] {
+  pointer-events: none; /* Disables mouse clicks and hover states */
+  background-color: #cccccc !important; /* Grays out the button */
+  color: #666666 !important;
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
 /* Venue Section Layout */
 .venue-layout {
   display: grid;
