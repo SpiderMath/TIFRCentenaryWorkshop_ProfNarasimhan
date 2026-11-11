@@ -6,7 +6,7 @@
         {
             id: "poster-extension",
             title: "Poster Submission is now closed",
-            html: `<p>The student poster submission has <strong>concluded</strong>. Selected students will be informed by email soon.</p>`,
+            html: `<p>The student poster submission has <strong>concluded</strong>. Selected students have been informed by email.</p>`,
             active: true,
             pages: {
                 home: true,
