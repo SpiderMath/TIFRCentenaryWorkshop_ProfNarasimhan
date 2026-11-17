@@ -21,14 +21,6 @@ const workshopData = {
                 "A Time Series Foundation Model (TSFM) takes in-context time series input to produce a forecast for it. Generic TSFM achieves this by embedding input time series using encoding map and applying a decoding map to produce forecast, where encoding-decoding maps are learnt using pre-training data. The choice of architecture, pre-training data utilized determine the out-of-sample model performance. Existing TSFMs typically require a rich pre-training dataset with large architecture leading to compute intensive training as well as inference. In this work, we are motivated to develop a compute efficient architecture for TSFM without sacrificing performance. Towards that, we introduce an embedding of time series that maps them, in a lossless manner, to a unit square (i.e [0, 1]^2) or equivalently a 2D image: it's intuitive and simple, i.e. computationally straightforward; it's universal, i.e. does not depend on any training data and works for any time series. With this embedding, we introduce an architecture where time series foundation model naturally maps to traditional supervised learning problem. The architecture has flexibility, in addition, of combining any of the existing models to produce a TSFM that is computationally efficient without sacrificing performance. The model architecture also provides ability to tradeoff accuracy with compute cost of inference. We evaluate its performance in terms of forecasting accuracy as well as computational cost and compare with respect to an existing pre-trained TSFM to conclude that it achieves computational efficiency without sacrificing performance.",
               bio: "Devavrat Shah is an Andrew (1956) and Erna Viterbi Professor of Electrical Engineering and Computer Science at MIT. In 2013, he co-founded AI start-up Celect (part of Nike) to help retailers with allocation and fulfillment. In 2019, he is co-founder of Ikigai Labs.",
             },
-            {
-              title:
-                "Trustworthy Reinforcement Learning: From Formal Specifications to Learning Algorithms",
-              speakers: ["ashutosh-trivedi"],
-              abstract:
-                "Reinforcement learning provides a powerful framework for learning decision-making strategies from interaction, but specifying what an agent should learn is often as challenging as designing the learning algorithm itself. A scalar reward can be an inadequate description of objectives that involve sequences of events, long-term requirements, safety constraints, or other temporal properties.\n\nIn this talk, I will discuss how ideas from formal methods can help address this problem. Temporal logic, automata, and related specification formalisms provide precise ways to describe desired behavior, while reinforcement-learning algorithms provide mechanisms for learning how to achieve such objectives from experience. I will describe ways in which these viewpoints can be connected so that richer specifications can be incorporated into learning algorithms without losing the ability to reason about their behavior.\n\nI will also discuss some of our recent work on reinforcement learning with formally specified objectives and on obtaining statistical and formal guarantees for learned policies. More broadly, the talk will illustrate how classical ideas from algorithms, automata, and verification can contribute to the design of learning systems that are easier to specify, analyze, and trust.",
-              bio: "Ashutosh Trivedi is an Associate Professor of Computer Science at the University of Colorado Boulder. His research lies at the intersection of formal methods, reinforcement learning, and trustworthy artificial intelligence, with applications to cyber-physical and safety-critical systems. His work develops mathematical foundations and algorithms for specifying, learning, and verifying the behavior of learning-enabled systems.",
-            },
           ],
         },
         {
@@ -180,13 +172,6 @@ const workshopData = {
       affiliation: "University of Pennsylvania",
       image: "assets/rajeev-alur.webp",
       website: "https://www.cis.upenn.edu/~alur/",
-    },
-    {
-      anchor: "ashutosh-trivedi",
-      name: "Ashutosh Trivedi",
-      affiliation: "University of Colorado Boulder",
-      image: "assets/ashutosh-trivedi.webp",
-      website: "http://ashutoshtrivedi.com/",
     },
     {
       anchor: "diptarka-chakraborty",
