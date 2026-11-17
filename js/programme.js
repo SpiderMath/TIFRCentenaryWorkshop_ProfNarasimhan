@@ -40,22 +40,27 @@
         return `<div class="${cssClass}">${label}: ${renderedSpeakers.join(", ")}</div>`;
     }
 
-    function renderAbstract(item) {
-        if (!item.abstract || item.abstract.trim() === "") {
-            return "";
+    function renderAbstract(abstract, id) {
+        if (!abstract || abstract.trim() === "") {
+            return { toggle: "", body: "" };
         }
 
-        return `
-            <details class="subtalk-abstract-details">
-                <summary>Abstract</summary>
-                <div class="subtalk-abstract-body">${item.abstract}</div>
-            </details>
-        `;
+        return {
+            toggle: `
+                <button type="button" class="abstract-toggle" aria-expanded="false" aria-controls="${id}">
+                    Abstract
+                    <svg width="0.8em" height="0.8em" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                        <path d="m2 5 6 6 6-6" />
+                    </svg>
+                </button>
+            `,
+            body: `<div id="${id}" class="subtalk-abstract-body" hidden>${abstract}</div>`,
+        };
     }
 
     // 2. Render Timetable Schedule
     let scheduleHTML = "";
-    workshopData.schedule.forEach(function (dayGroup) {
+    workshopData.schedule.forEach(function (dayGroup, dayIndex) {
         scheduleHTML += `
             <div class="day-group">
                 <div class="day-title">${dayGroup.day}</div>
@@ -63,9 +68,11 @@
                     <tbody>
         `;
 
-        dayGroup.sessions.forEach(function (session) {
+        dayGroup.sessions.forEach(function (session, sessionIndex) {
             const rowClass = session.isBreak ? ' class="break-row"' : "";
             const sessionSpeakerLine = renderSpeakerLine(session, "timetable-speaker");
+            const sessionAbstractId = `abstract-${dayIndex}-${sessionIndex}`;
+            const sessionAbstract = renderAbstract(session.publicLectureUrl ? "" : session.abstract, sessionAbstractId);
             const sessionTitle = session.publicLectureUrl ? `
                 <a class="lecture-title-link" href="${session.publicLectureUrl}">
                     ${session.title}
@@ -79,8 +86,9 @@
             let talksHTML = "";
             if (session.talks && session.talks.length > 0) {
                 talksHTML += '<div class="subtalks-list">';
-                session.talks.forEach(function (talk) {
+                session.talks.forEach(function (talk, talkIndex) {
                     const talkSpeaker = renderSpeakerLine(talk, "subtalk-speaker");
+                    const talkAbstract = renderAbstract(talk.abstract, `${sessionAbstractId}-${talkIndex}`);
 
                     let bioBlock = "";
                     if (talk.bio && talk.bio.trim() !== "") {
@@ -91,9 +99,9 @@
 
                     talksHTML += `
                         <div class="subtalk-item">
-                            <div class="subtalk-title"><strong>${talk.title}</strong></div>
+                            <div class="subtalk-title"><strong>${talk.title}</strong> ${talkAbstract.toggle}</div>
                             ${talkSpeaker}
-                            ${renderAbstract(talk)}
+                            ${talkAbstract.body}
                             ${bioBlock}
                         </div>
                     `;
@@ -105,9 +113,9 @@
                 <tr${rowClass}>
                     <td class="timetable-time">${session.time || ""}</td>
                     <td class="timetable-content">
-                        <div class="timetable-title${session.talks && session.talks.length ? ' umbrella-title' : ''}">${sessionTitle}</div>
+                        <div class="timetable-title${session.talks && session.talks.length ? ' umbrella-title' : ''}">${sessionTitle} ${sessionAbstract.toggle}</div>
                         ${sessionSpeakerLine}
-                        ${session.publicLectureUrl ? "" : renderAbstract(session)}
+                        ${sessionAbstract.body}
                         ${talksHTML}
                     </td>
                 </tr>
@@ -121,6 +129,16 @@
         `;
     });
     scheduleMount.innerHTML = scheduleHTML;
+
+    scheduleMount.addEventListener("click", function (event) {
+        const toggle = event.target.closest(".abstract-toggle");
+        if (!toggle) return;
+
+        const body = document.getElementById(toggle.getAttribute("aria-controls"));
+        const expanded = body.hidden;
+        body.hidden = !expanded;
+        toggle.setAttribute("aria-expanded", expanded);
+    });
 
     // 3. Render Confirmed Speakers Directory
     let speakersHTML = "";

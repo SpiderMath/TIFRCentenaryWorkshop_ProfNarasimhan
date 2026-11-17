@@ -1473,26 +1473,45 @@ body::before {
 }
 
 /* Collapsible Abstract */
-.subtalk-abstract-details {
-  margin-top: 0.25rem;
+.timetable-title:has(> .abstract-toggle),
+.subtalk-title:has(> .abstract-toggle) {
+  text-wrap: balance;
 }
 
-.subtalk-item > .subtalk-abstract-details {
-  margin-top: 0;
-}
-
-.subtalk-abstract-details summary {
-  font-size: 0.78rem;
+.abstract-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.125em;
+  margin-inline-start: 0.2rem;
+  min-height: 1.5rem;
+  border: 0;
+  background: none;
   color: var(--color-accent-blue);
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 600;
+  line-height: 1.4;
   cursor: pointer;
-  user-select: none;
-  display: block;
-  width: fit-content;
 }
 
-.subtalk-abstract-details summary:hover,
-.subtalk-abstract-details summary:focus-visible {
+.abstract-toggle:hover,
+.abstract-toggle:focus-visible {
   color: var(--color-accent-hover);
+}
+
+.abstract-toggle:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+
+.abstract-toggle[aria-expanded="true"] svg {
+  transform: rotate(-90deg);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .abstract-toggle svg {
+    transition: transform 0.15s ease;
+  }
 }
 
 .subtalk-abstract-body {
