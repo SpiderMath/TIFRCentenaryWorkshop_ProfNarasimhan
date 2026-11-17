@@ -4,6 +4,19 @@
     // In "pages", set boolean flags to control on which pages the notice appears.
     const siteNotices = [
         {
+            id: "registration-deadline",
+            title: "Registration will close on November 25th.",
+            html: `<p>Please register <a href="https://forms.gle/dMWKAp92bVZXLoBAA" target="_blank" rel="noopener noreferrer" aria-label="Register here for workshop attendance">here</a> by <time datetime="2026-11-25">November 25th</time> if you would like to attend.</p>`,
+            active: true,
+            pages: {
+                home: true,
+                programme: false,
+                participate: true,
+                publicLecture: false,
+                remembering: false
+            }
+        },
+        {
             id: "poster-extension",
             title: "Poster Submission is now closed",
             html: `<p>The student poster submission has <strong>concluded</strong>. Selected students have been informed by email.</p>`,
