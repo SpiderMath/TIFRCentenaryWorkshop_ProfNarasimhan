@@ -19,7 +19,7 @@ const workshopData = {
               speakers: ["devavrat-shah"],
               abstract:
                 "A Time Series Foundation Model (TSFM) takes in-context time series input to produce a forecast for it. Generic TSFM achieves this by embedding input time series using encoding map and applying a decoding map to produce forecast, where encoding-decoding maps are learnt using pre-training data. The choice of architecture, pre-training data utilized determine the out-of-sample model performance. Existing TSFMs typically require a rich pre-training dataset with large architecture leading to compute intensive training as well as inference. In this work, we are motivated to develop a compute efficient architecture for TSFM without sacrificing performance. Towards that, we introduce an embedding of time series that maps them, in a lossless manner, to a unit square (i.e [0, 1]^2) or equivalently a 2D image: it's intuitive and simple, i.e. computationally straightforward; it's universal, i.e. does not depend on any training data and works for any time series. With this embedding, we introduce an architecture where time series foundation model naturally maps to traditional supervised learning problem. The architecture has flexibility, in addition, of combining any of the existing models to produce a TSFM that is computationally efficient without sacrificing performance. The model architecture also provides ability to tradeoff accuracy with compute cost of inference. We evaluate its performance in terms of forecasting accuracy as well as computational cost and compare with respect to an existing pre-trained TSFM to conclude that it achieves computational efficiency without sacrificing performance.",
-              bio: "Devavrat Shah is an Andrew (1956) and Erna Viterbi Professor of Electrical Engineering and Computer Science at MIT. In 2013, he co-founded AI start-up Celect (part of Nike) to help retailers with allocation and fulfillment. In 2019, he is co-founder of Ikigai Labs.",
+              // bio: "Devavrat Shah is an Andrew (1956) and Erna Viterbi Professor of Electrical Engineering and Computer Science at MIT. In 2013, he co-founded AI start-up Celect (part of Nike) to help retailers with allocation and fulfillment. In 2019, he is co-founder of Ikigai Labs.",
             },
           ],
         },
@@ -89,7 +89,7 @@ const workshopData = {
               title: "Multipartition Communication Complexity and Algebraic Complexity",
               speakers: ["srikanth-srinivasan"],
               abstract: "The classical model of communication complexity, introduced by Yao, has been an object of intense study over the years with many applications to complexity theory, including circuit complexity, proof complexity, extended formulations and so on. I will define a relatively understudied version of this communication model called Multipartition communication complexity, which was introduced in work of Duriš, Hromkovič, Jukna, Sauerhoff, and Schnitger. Using a suitable lower bound for this model, we can derive a nearly optimal monotone vs. non-monotone separation for algebraic circuits, which I will sketch. Joint work with Cavalar, Fabris, Mukhopadhyay and Yehudayoff.",
-              bio: "Srikanth Srinivasan received his PhD in 2011 from IMSc in Chennai, where he was advised by V Arvind. He is on the faculty at the computer science department (DIKU) at the University of Copenhagen after having spent time at IAS, DIMACS, IIT Bombay (Mathematics dept) and Aarhus University. His research interests span all of theoretical computer science in theory but in practice are limited to complexity theory and adjacent areas.",
+              // bio: "Srikanth Srinivasan received his PhD in 2011 from IMSc in Chennai, where he was advised by V Arvind. He is on the faculty at the computer science department (DIKU) at the University of Copenhagen after having spent time at IAS, DIMACS, IIT Bombay (Mathematics dept) and Aarhus University. His research interests span all of theoretical computer science in theory but in practice are limited to complexity theory and adjacent areas.",
             },
           ],
         },
@@ -109,7 +109,7 @@ const workshopData = {
               speakers: ["rohit-gurjar"],
               abstract:
                 "The bipartite matching problem is one of the most extensively studied problems in algorithms and complexity theory. Beyond numerous practical applications such as assigning suitable tasks to machines, its study has led to several influential ideas in the field. In this talk, we will review the history of the problem from the perspective of parallel algorithms and present a recent result that gives the first deterministic parallel algorithm for it, settling a question that had remained open for more than four decades.\n\nBased on joint work with Abhranil Chatterjee, Sumanta Ghosh, Roshan Raj, and Thomas Thierauf.",
-              bio: "Rohit Gurjar is a faculty member in the CSE department at IIT Bombay since 2018. His research interests center on theoretical computer science, specifically Computational Complexity, Derandomization, Polyhedral Combinatorics, and Parallel Complexity. In particular, he has worked on the polynomial identity testing, bipartite matching and related combinatorial problems. Before joining IITB, he did his postdocs at the University of Ulm (Germany), Tel Aviv University (Israel), and Caltech (USA), and obtained his Ph.D. from IIT Kanpur.",
+              // bio: "Rohit Gurjar is a faculty member in the CSE department at IIT Bombay since 2018. His research interests center on theoretical computer science, specifically Computational Complexity, Derandomization, Polyhedral Combinatorics, and Parallel Complexity. In particular, he has worked on the polynomial identity testing, bipartite matching and related combinatorial problems. Before joining IITB, he did his postdocs at the University of Ulm (Germany), Tel Aviv University (Israel), and Caltech (USA), and obtained his Ph.D. from IIT Kanpur.",
             },
             {
               title: "TBA",
@@ -218,7 +218,7 @@ const workshopData = {
     {
       anchor: "benny-applebaum",
       name: "Benny Applebaum",
-      affiliation: "Tel Aviv University",
+      affiliation: "Tel Aviv Universituy",
       image: "assets/benny-applebaum.webp",
       website: "https://bennyapplebaum.sites.tau.ac.il/",
     },
