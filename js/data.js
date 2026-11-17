@@ -83,12 +83,15 @@ const workshopData = {
             {
               title: "The Complexity of Secret Sharing",
               speakers: ["benny-applebaum"],
-              abstract: "Secret sharing allows a dealer to distribute a secret among a collection of parties so that only certain authorized subsets can reconstruct the secret, while unauthorized subsets learn nothing about it. The complexity of such schemes has been studied for several decades and is governed by the structure of the underlying access structure.\n\nOver the last decade, substantial progress has been made on several central questions, yet many basic problems remain wide open. In this talk, I will survey several of these recent developments and highlight some unexpected connections between the complexity of secret sharing and other questions in computational complexity.",
+              abstract:
+                "Secret sharing allows a dealer to distribute a secret among a collection of parties so that only certain authorized subsets can reconstruct the secret, while unauthorized subsets learn nothing about it. The complexity of such schemes has been studied for several decades and is governed by the structure of the underlying access structure.\n\nOver the last decade, substantial progress has been made on several central questions, yet many basic problems remain wide open. In this talk, I will survey several of these recent developments and highlight some unexpected connections between the complexity of secret sharing and other questions in computational complexity.",
             },
             {
-              title: "Multipartition Communication Complexity and Algebraic Complexity",
+              title:
+                "Multipartition Communication Complexity and Algebraic Complexity",
               speakers: ["srikanth-srinivasan"],
-              abstract: "The classical model of communication complexity, introduced by Yao, has been an object of intense study over the years with many applications to complexity theory, including circuit complexity, proof complexity, extended formulations and so on. I will define a relatively understudied version of this communication model called Multipartition communication complexity, which was introduced in work of Duriš, Hromkovič, Jukna, Sauerhoff, and Schnitger. Using a suitable lower bound for this model, we can derive a nearly optimal monotone vs. non-monotone separation for algebraic circuits, which I will sketch. Joint work with Cavalar, Fabris, Mukhopadhyay and Yehudayoff.",
+              abstract:
+                "The classical model of communication complexity, introduced by Yao, has been an object of intense study over the years with many applications to complexity theory, including circuit complexity, proof complexity, extended formulations and so on. I will define a relatively understudied version of this communication model called Multipartition communication complexity, which was introduced in work of Duriš, Hromkovič, Jukna, Sauerhoff, and Schnitger. Using a suitable lower bound for this model, we can derive a nearly optimal monotone vs. non-monotone separation for algebraic circuits, which I will sketch. Joint work with Cavalar, Fabris, Mukhopadhyay and Yehudayoff.",
               // bio: "Srikanth Srinivasan received his PhD in 2011 from IMSc in Chennai, where he was advised by V Arvind. He is on the faculty at the computer science department (DIKU) at the University of Copenhagen after having spent time at IAS, DIMACS, IIT Bombay (Mathematics dept) and Aarhus University. His research interests span all of theoretical computer science in theory but in practice are limited to complexity theory and adjacent areas.",
             },
           ],
@@ -129,9 +132,10 @@ const workshopData = {
           isBreak: false,
           talks: [
             {
-              title: "TBA",
+              title: "Measuring Oral Reading Fluency at Scale",
               speakers: ["preeti-rao"],
-              abstract: "",
+              abstract:
+                'Foundational literacy and numeracy are the cornerstones of India’s New Education Policy (NEP 2020) which also recommends competency-based learning where assessments play a critical role. A key indicator of reading ability is oral reading fluency (ORF), traditionally used to evaluate critical literacy proficiencies including language understanding. Given the time and resource intensive nature of such assessment, it is of interest to automate the measurement of reading fluency.  We discuss the considerations that arise in view of speech processing paradigms that range from knowledge-based feature engineering to deep learning from labeled data. In the case of automated educational assessments, both, prediction performance and the interpretability of outcomes, are critical. We present a journey through field data collection, computational modeling of pedagogical rubrics and working around limitations of state-of-the-art algorithms in the real world to achieve an objective and reliable implementation of ORF measurement at scale. The TARA system, developed at IIT Bombay, was endorsed last year by the Ministry of Education for country-wide deployment of foundational literacy assessment (<a href="https://www.youtube.com/watch?v=VrfrgS9JK_Q" target="_blank" rel="noopener noreferrer">YouTube Link</a>)',
             },
             {
               title: "TBA",
