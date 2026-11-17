@@ -155,9 +155,9 @@ const workshopData = {
           isBreak: false,
           talks: [
             {
-              title: "TBA",
+              title: "Quantum Walks: From Algorithms to Building Quantum Computers",
               speakers: ["cm-chandrashekar"],
-              abstract: "",
+              abstract: "Random walks are among the most versatile tools in computer science, underlying algorithms for search, sampling, graph analysis and optimisation. Their quantum counterpart, the quantum walk, replaces probabilities with amplitudes that interfere. The walker spreads quadratically faster than a classical one, and this simple change has far-reaching consequences.\n\nThis talk introduces quantum walks from first principles and follows them through three roles. First, as an algorithmic tool: quantum walks give speed-ups for search and for problems on graphs and offer a natural way to rank nodes in networks. Second, as a simulator of nature: with suitably engineered walks we can reproduce the dynamics of relativistic particles, neutrino oscillations and energy transport in complex systems, turning a quantum computer into a programmable laboratory. Third, as a primitive for computer architecture: I will describe our framework showing that discrete-time quantum walks alone suffice for universal quantum computation, so a quantum computer can be designed as a walk on a suitably chosen graph. \n\nI will conclude by showing how we realised this architecture experimentally, encoding qubits in photons to demonstrate universal gates, multi-qubit entanglement and small algorithms on a six-qubit photonic processor.",
             },
             {
               title: "TBA",
