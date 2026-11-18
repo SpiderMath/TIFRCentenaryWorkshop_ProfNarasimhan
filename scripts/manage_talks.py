@@ -3,10 +3,11 @@
 
 import json
 import os
-from pathlib import Path
 import re
 import sys
+from pathlib import Path
 
+from editor import Cancelled, ask, ask_multiline, choose, js_string
 
 DATA_FILE = Path(__file__).resolve().parents[1] / "js" / "data.js"
 
@@ -21,34 +22,17 @@ SLOTS = [
 ]
 
 JS_STRING = r'"(?:\\.|[^"\\])*"'
+JS_STRING_OR_COMMENT = re.compile(
+    rf"""{JS_STRING}|'(?:\\.|[^'\\])*'|`(?:\\.|[^`\\])*`|(?P<comment>//[^\r\n]*|/\*.*?\*/)""",
+    re.DOTALL,
+)
 
 
-class Cancelled(Exception):
-    pass
-
-
-def ask(prompt):
-    try:
-        return input(prompt)
-    except (EOFError, KeyboardInterrupt) as error:
-        raise Cancelled from error
-
-
-def choose(question, options, default=None):
-    print(f"\n{question}")
-    for number, option in enumerate(options, 1):
-        print(f"  {number}. {option}")
-
-    while True:
-        hint = f" [{default + 1}]" if default is not None else ""
-        answer = ask(f"Select{hint}: ").strip()
-        if answer.lower() in {"q", "quit"}:
-            raise Cancelled
-        if not answer and default is not None:
-            return default
-        if answer.isdigit() and 1 <= int(answer) <= len(options):
-            return int(answer) - 1
-        print(f"Enter a number from 1 to {len(options)}, or q to cancel.")
+def mask_comments(text):
+    """Hide comments from the parser while keeping source offsets."""
+    return JS_STRING_OR_COMMENT.sub(
+        lambda token: " " * len(token[0]) if token["comment"] else token[0], text
+    )
 
 
 def ask_title(current=None):
@@ -60,16 +44,6 @@ def ask_title(current=None):
         if current is not None:
             return current
         print("The title cannot be empty.")
-
-
-def ask_multiline(field):
-    print(f"Enter the {field}. Type .done on its own line when finished.")
-    lines = []
-    while True:
-        line = ask("> ")
-        if line.strip() == ".done":
-            return "\n".join(lines).strip()
-        lines.append(line)
 
 
 def edit_multiline(field, current):
@@ -138,10 +112,6 @@ def speaker_name(value, directory):
     return value
 
 
-def js_string(value):
-    return json.dumps(value, ensure_ascii=False)
-
-
 def find_closing(text, start, opening, closing):
     """Find a matching bracket while ignoring brackets inside strings."""
     depth = 0
@@ -194,60 +164,67 @@ def read_string_property(block, name, default=None):
     return json.loads(match.group(1))
 
 
-def parse_talk(block):
-    speaker_key = re.search(r"\bspeakers\s*:\s*\[", block)
+def parse_talk(block, code):
+    speaker_key = re.search(r"\bspeakers\s*:\s*\[", code)
     if not speaker_key:
         raise ValueError("Talk is missing speakers")
-    speakers_start = block.find("[", speaker_key.start())
-    speakers_end = find_closing(block, speakers_start, "[", "]")
+    speakers_start = code.find("[", speaker_key.start())
+    speakers_end = find_closing(code, speakers_start, "[", "]")
     speakers = [
         json.loads(match.group(0))
-        for match in re.finditer(JS_STRING, block[speakers_start + 1 : speakers_end])
+        for match in re.finditer(JS_STRING, code[speakers_start + 1 : speakers_end])
     ]
     return {
-        "title": read_string_property(block, "title"),
+        "title": read_string_property(code, "title"),
         "speakers": speakers,
-        "abstract": read_string_property(block, "abstract", default=""),
-        "bio": read_string_property(block, "bio", default=""),
+        "abstract": read_string_property(code, "abstract", default=""),
+        "bio": read_string_property(code, "bio", default=""),
+        "comments": [
+            token["comment"]
+            for token in JS_STRING_OR_COMMENT.finditer(block)
+            if token["comment"]
+        ],
     }
 
 
-def load_session(text, title, time):
+def load_session(text, code, title, time):
     marker = re.compile(
         rf"\btime\s*:\s*{re.escape(js_string(time))}\s*,\s*"
         rf"title\s*:\s*{re.escape(js_string(title))}\s*,",
         re.DOTALL,
     )
-    matches = list(marker.finditer(text))
+    matches = list(marker.finditer(code))
     if len(matches) != 1:
         raise ValueError(f"Could not uniquely find {title} at {time}")
 
     match = matches[0]
-    session_start = text.rfind("{", 0, match.start())
-    session_end = find_closing(text, session_start, "{", "}")
-    talks_key = text.find("talks:", match.end(), session_end)
+    session_start = code.rfind("{", 0, match.start())
+    session_end = find_closing(code, session_start, "{", "}")
+    talks_key = code.find("talks:", match.end(), session_end)
     if talks_key == -1:
         raise ValueError(f"Session has no talks array: {title} at {time}")
 
-    array_start = text.find("[", talks_key, session_end)
-    array_end = find_closing(text, array_start, "[", "]")
+    array_start = code.find("[", talks_key, session_end)
+    array_end = find_closing(code, array_start, "[", "]")
     line_start = text.rfind("\n", 0, talks_key) + 1
     indentation = text[line_start:talks_key]
-    ranges = objects_in_array(text, array_start, array_end)
+    ranges = objects_in_array(code, array_start, array_end)
 
     return {
-        "key": (title, time),
         "title": title,
         "time": time,
         "array_start": array_start,
         "array_end": array_end + 1,
         "indentation": indentation,
-        "talks": [parse_talk(text[start:end]) for start, end in ranges],
+        "talks": [
+            parse_talk(text[start:end], code[start:end]) for start, end in ranges
+        ],
     }
 
 
 def load_sessions(text):
-    return [load_session(text, title, time) for title, time in SLOTS]
+    code = mask_comments(text)
+    return [load_session(text, code, title, time) for title, time in SLOTS]
 
 
 def load_speakers(text):
@@ -275,7 +252,9 @@ def talk_label(talk, directory):
 
 def choose_talk_by_slot(sessions, directory):
     session = sessions[
-        choose("Choose the current schedule slot", [slot_label(slot) for slot in sessions])
+        choose(
+            "Choose the current schedule slot", [slot_label(slot) for slot in sessions]
+        )
     ]
     talk_index = choose(
         "Choose the talk", [talk_label(talk, directory) for talk in session["talks"]]
@@ -334,10 +313,9 @@ def render_talks(talks, indentation):
     objects = []
     for talk in talks:
         bio = (
-            f"{property_indent}bio: {js_string(talk['bio'])},\n"
-            if talk["bio"]
-            else ""
+            f"{property_indent}bio: {js_string(talk['bio'])},\n" if talk["bio"] else ""
         )
+        comments = "".join(f"{property_indent}{line}\n" for line in talk["comments"])
         objects.append(
             f"{object_indent}{{\n"
             f"{property_indent}title: {js_string(talk['title'])},\n"
@@ -345,6 +323,7 @@ def render_talks(talks, indentation):
             f"[{', '.join(js_string(value) for value in talk['speakers'])}],\n"
             f"{property_indent}abstract: {js_string(talk['abstract'])},\n"
             f"{bio}"
+            f"{comments}"
             f"{object_indent}}},"
         )
     return "[\n" + "\n".join(objects) + f"\n{indentation}]"
@@ -380,8 +359,10 @@ def main():
     directory = load_speakers(source)
 
     action = choose("What would you like to do?", ["Add a talk", "Edit a talk"])
+    selected_talk = choose_talk_to_edit(sessions, directory) if action == 1 else None
 
-    if action == 0:
+    comments = []
+    if selected_talk is None:
         destination = sessions[
             choose("Choose the schedule slot", [slot_label(slot) for slot in sessions])
         ]
@@ -389,10 +370,10 @@ def main():
         speakers = choose_speakers(directory)
         abstract = ask_multiline("abstract")
         bio = ask_multiline("bio")
-        changed = [destination]
     else:
-        source_session, talk_index = choose_talk_to_edit(sessions, directory)
+        source_session, talk_index = selected_talk
         old_talk = source_session["talks"][talk_index]
+        comments = old_talk["comments"]
         title = ask_title(old_talk["title"])
         speakers = choose_speakers(directory, old_talk["speakers"])
         abstract = edit_multiline("abstract", old_talk["abstract"])
@@ -405,13 +386,13 @@ def main():
                 default=current_slot,
             )
         ]
-        changed = [source_session, destination]
 
     new_talk = {
         "title": title,
         "speakers": speakers,
         "abstract": abstract,
         "bio": bio,
+        "comments": comments,
     }
 
     print("\nReview")
@@ -426,16 +407,19 @@ def main():
     if not confirm():
         raise Cancelled
 
-    if action == 0:
+    changed_sessions = [destination]
+    if selected_talk is None:
         destination["talks"].append(new_talk)
-    elif source_session is destination:
-        source_session["talks"][talk_index] = new_talk
     else:
-        source_session["talks"].pop(talk_index)
-        destination["talks"].append(new_talk)
+        source_session, talk_index = selected_talk
+        if source_session is destination:
+            source_session["talks"][talk_index] = new_talk
+        else:
+            source_session["talks"].pop(talk_index)
+            destination["talks"].append(new_talk)
+            changed_sessions.append(source_session)
 
-    changed = list({session["key"]: session for session in changed}.values())
-    updated = replace_talk_arrays(source, changed)
+    updated = replace_talk_arrays(source, changed_sessions)
 
     # Parse the result before writing it.
     load_sessions(updated)

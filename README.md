@@ -161,6 +161,21 @@ Individual talks inside an umbrella block do not have individual timestamps; the
 
 ### 1. How to Send Out or Update a Notice
 
+Run `just` from the repository root to list the maintenance commands.
+
+Run `just manage-announcements` and choose **Add an announcement** or **Edit
+an announcement**. Select an existing entry by title to edit it. Press Enter
+to keep its settings, or enter `.clear` to remove the optional title or tag.
+The message supports HTML and can span multiple lines. Enter `.done` on its
+own line to finish entering a message. Review and confirm to save. Enter `q`
+at a selection prompt to cancel.
+
+Use `just manage-announcements --dry-run` to preview an addition or edit. Run
+`just add-announcement` to go straight to adding an announcement. New
+announcements go at the top and default to active on the Home page.
+
+#### Editing notices directly
+
 Open `js/notices.js`:
 
 1. To **turn on an existing notice**, find its entry in `siteNotices` and set `active: true`.
@@ -224,11 +239,7 @@ Add all relevant anchor slugs to the `speakers` array:
 
 #### Interactive talk editor
 
-Run the dependency-free editor from the repository root:
-
-```bash
-python3 scripts/manage_talks.py
-```
+Run `just manage-talks` from the repository root.
 
 It prompts you to add or edit a talk, select one of the supported thematic time
 slots, choose one or more speakers, enter the title and abstract, review the

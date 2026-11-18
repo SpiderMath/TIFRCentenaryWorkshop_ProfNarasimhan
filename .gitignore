@@ -1,3 +1,4 @@
 .DS_Store
 .Codex
 .Agents
+scripts/__pycache__/
