@@ -2,3 +2,4 @@
 .Codex
 .Agents
 scripts/__pycache__/
+.ruff_cache
