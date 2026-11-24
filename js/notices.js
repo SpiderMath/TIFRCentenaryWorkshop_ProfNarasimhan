@@ -5,8 +5,8 @@
     const siteNotices = [
         {
             id: "registration-deadline",
-            title: "Registration will close on November 25th.",
-            html: `<p>Please register <a href="https://forms.gle/dMWKAp92bVZXLoBAA" target="_blank" rel="noopener noreferrer" aria-label="Register here for workshop attendance">here</a> by <time datetime="2026-11-25">November 25th</time> if you would like to attend.</p>`,
+            title: "Registration will close on November 28th.",
+            html: `<p>Please register <a href="https://forms.gle/dMWKAp92bVZXLoBAA" target="_blank" rel="noopener noreferrer" aria-label="Register here for workshop attendance">here</a> by <time datetime="2026-11-28">November 28th</time> if you would like to attend.</p>`,
             active: true,
             pages: {
                 home: true,
