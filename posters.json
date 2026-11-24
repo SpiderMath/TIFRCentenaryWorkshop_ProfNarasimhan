@@ -10,6 +10,11 @@
     "affiliation": "IIT Madras"
   },
   {
+    "title": "Towards Socially Optimal Distributed Leader Election",
+    "presenter": "Nithin Prakash Salevemula",
+    "affiliation": "IIT Madras"
+  },
+  {
     "title": "Constant Round MPC Protocols with Fall-back Security",
     "presenter": "Raghavendra N Vernekar",
     "affiliation": "Indian Institute of Science"
@@ -25,13 +30,18 @@
     "affiliation": "Indian Institute of Science"
   },
   {
-    "title": "Towards Socially Optimal Distributed Leader Election",
-    "presenter": "Nithin Prakash Salevemula",
-    "affiliation": "IIT Madras"
-  },
-  {
     "title": "Packing Linear Programs and Knapsack Under Comparison Oracles",
     "presenter": "Ritabrata Barat",
+    "affiliation": "Indian Institute of Science"
+  },
+  {
+    "title": "The Randomized Competitive Ratio of Weighted k-Server is Exponential",
+    "presenter": "Nikhil Ayyadevara",
+    "affiliation": "Indian Institute of Science"
+  },
+  {
+    "title": "Semirandom Planted Bipartite Subgraphs",
+    "presenter": "Kirtan Vora",
     "affiliation": "Indian Institute of Science"
   },
   {
@@ -45,8 +55,18 @@
     "affiliation": "ISI, Kolkata"
   },
   {
+    "title": "From Decision to Random Certificates: Exponential Separation for Edge Estimation with Independent Set Queries",
+    "presenter": "Buddha Dev Das",
+    "affiliation": "ISI, Kolkata"
+  },
+  {
     "title": "Convex Basins in Single-Index Model Loss Landscapes: Applications to Robust Recovery under Strong Adversarial Corruption",
     "presenter": "Santanu Das",
+    "affiliation": "TIFR, Mumbai"
+  },
+  {
+    "title": "Towards Envy-Freeness Relaxations for General Nonmonotone Valuations",
+    "presenter": "Yeshwant Pandit",
     "affiliation": "TIFR, Mumbai"
   },
   {
@@ -60,29 +80,9 @@
     "affiliation": "NISER"
   },
   {
-    "title": "Towards Envy-Freeness Relaxations for General Nonmonotone Valuations",
-    "presenter": "Yeshwant Pandit",
-    "affiliation": "TIFR, Mumbai"
-  },
-  {
-    "title": "The Randomized Competitive Ratio of Weighted k-Server is Exponential",
-    "presenter": "Nikhil Ayyadevara",
-    "affiliation": "Indian Institute of Science"
-  },
-  {
-    "title": "From Decision to Random Certificates: Exponential Separation for Edge Estimation with Independent Set Queries",
-    "presenter": "Buddha Dev Das",
-    "affiliation": "ISI, Kolkata"
-  },
-  {
     "title": "All-Pairs kth Mincuts: Combinatorial and Structural Results",
     "presenter": "Anupam Roy",
     "affiliation": "IIT Kanpur"
-  },
-  {
-    "title": "Semirandom Planted Bipartite Subgraphs",
-    "presenter": "Kirtan Vora",
-    "affiliation": "Indian Institute of Science"
   },
   {
     "title": "A Human-Validated Lexical Evolution Resource for Dynamic Vocabulary Expansion in Social Media Text",
