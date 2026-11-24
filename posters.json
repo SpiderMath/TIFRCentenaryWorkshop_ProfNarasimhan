@@ -1,0 +1,92 @@
+[
+  {
+    "title": "Transitioning Heads Conundrum: The Hidden Bottleneck in Long-Tailed Class-Incremental Learning",
+    "presenter": "Rahul Vigneswaran",
+    "affiliation": "Microsoft Research"
+  },
+  {
+    "title": "How Private Is Each Token? Auditing Differential Privacy in Autoregressive Text Generation",
+    "presenter": "Dhruv Shah",
+    "affiliation": "IIT Madras"
+  },
+  {
+    "title": "Constant Round MPC Protocols with Fall-back Security",
+    "presenter": "Raghavendra N Vernekar",
+    "affiliation": "Indian Institute of Science"
+  },
+  {
+    "title": "Optimal Online Bin Packing under various Stochastic Models",
+    "presenter": "Venkata Naga Sreenivasulu Karnati",
+    "affiliation": "Indian Institute of Science"
+  },
+  {
+    "title": "(Im)possibility of Asynchronous MPC with Honest Majority over Blockchains",
+    "presenter": "Pabitra Mandal",
+    "affiliation": "Indian Institute of Science"
+  },
+  {
+    "title": "Towards Socially Optimal Distributed Leader Election",
+    "presenter": "Nithin Prakash Salevemula",
+    "affiliation": "IIT Madras"
+  },
+  {
+    "title": "Packing Linear Programs and Knapsack Under Comparison Oracles",
+    "presenter": "Ritabrata Barat",
+    "affiliation": "Indian Institute of Science"
+  },
+  {
+    "title": "Sharpness-Aware Orthogonalized Momentum: Convergence Analysis under Heavy-Tailed Gradient Noise",
+    "presenter": "Shivani Singh Chauhan",
+    "affiliation": "IIIT Delhi"
+  },
+  {
+    "title": "Sublinear Algorithms for Estimating Wasserstein and TV Distances: Applications to Fairness and Privacy Auditing",
+    "presenter": "Debarshi Chanda",
+    "affiliation": "ISI, Kolkata"
+  },
+  {
+    "title": "Convex Basins in Single-Index Model Loss Landscapes: Applications to Robust Recovery under Strong Adversarial Corruption",
+    "presenter": "Santanu Das",
+    "affiliation": "TIFR, Mumbai"
+  },
+  {
+    "title": "Best-of-Both-Worlds Fair Division via Subsidies",
+    "presenter": "Surya Panchapakesan",
+    "affiliation": "National University of Singapore"
+  },
+  {
+    "title": "Circuit Lower Bounds for Polynomials with Rapidly Growing Coefficients",
+    "presenter": "Praveen Kumaran P",
+    "affiliation": "NISER"
+  },
+  {
+    "title": "Towards Envy-Freeness Relaxations for General Nonmonotone Valuations",
+    "presenter": "Yeshwant Pandit",
+    "affiliation": "TIFR, Mumbai"
+  },
+  {
+    "title": "The Randomized Competitive Ratio of Weighted k-Server is Exponential",
+    "presenter": "Nikhil Ayyadevara",
+    "affiliation": "Indian Institute of Science"
+  },
+  {
+    "title": "From Decision to Random Certificates: Exponential Separation for Edge Estimation with Independent Set Queries",
+    "presenter": "Buddha Dev Das",
+    "affiliation": "ISI, Kolkata"
+  },
+  {
+    "title": "All-Pairs kth Mincuts: Combinatorial and Structural Results",
+    "presenter": "Anupam Roy",
+    "affiliation": "IIT Kanpur"
+  },
+  {
+    "title": "Semirandom Planted Bipartite Subgraphs",
+    "presenter": "Kirtan Vora",
+    "affiliation": "Indian Institute of Science"
+  },
+  {
+    "title": "A Human-Validated Lexical Evolution Resource for Dynamic Vocabulary Expansion in Social Media Text",
+    "presenter": "Akhila VH",
+    "affiliation": "National Institute of Technology Calicut"
+  }
+]
