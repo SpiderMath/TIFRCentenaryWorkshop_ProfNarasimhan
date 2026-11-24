@@ -58,6 +58,7 @@ const workshopData = {
         {
           time: "16:00 - 17:30",
           title: "Student poster session and tea break",
+          titleUrl: "#accepted-posters",
           isBreak: false,
         },
         {

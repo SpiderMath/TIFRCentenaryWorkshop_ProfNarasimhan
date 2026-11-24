@@ -73,15 +73,18 @@
             const sessionSpeakerLine = renderSpeakerLine(session, "timetable-speaker");
             const sessionAbstractId = `abstract-${dayIndex}-${sessionIndex}`;
             const sessionAbstract = renderAbstract(session.publicLectureUrl ? "" : session.abstract, sessionAbstractId);
-            const sessionTitle = session.publicLectureUrl ? `
-                <a class="lecture-title-link" href="${session.publicLectureUrl}">
+            let sessionTitle = session.title;
+            if (session.publicLectureUrl) {
+                sessionTitle = `<a class="lecture-title-link" href="${session.publicLectureUrl}">
                     ${session.title}
                     <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
                         <path d="M15 3h6v6M10 14 21 3" />
                         <path d="M21 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5" />
                     </svg>
-                </a>
-            ` : session.title;
+                </a>`;
+            } else if (session.titleUrl) {
+                sessionTitle = `<a href="${session.titleUrl}">${session.title}</a>`;
+            }
 
             let talksHTML = "";
             if (session.talks && session.talks.length > 0) {

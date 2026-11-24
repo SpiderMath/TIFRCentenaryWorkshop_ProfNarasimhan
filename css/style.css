@@ -336,6 +336,7 @@ a:focus-visible {
 
 .section-jump-nav {
   display: inline-flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 0.5rem;
   font-size: 0.9rem;
@@ -362,6 +363,7 @@ a:focus-visible {
 
 .programme-block {
   margin-bottom: 3rem;
+  scroll-margin-top: 5rem;
 }
 
 .section-heading {
@@ -529,7 +531,65 @@ a:focus-visible {
   line-height: 1.35;
 }
 
+.poster-list {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  font-size: 0.92rem;
+}
+
+.poster-list th,
+.poster-list td {
+  border: 1px solid var(--border-color);
+  padding: 0.55rem 0.75rem;
+  text-align: left;
+  vertical-align: top;
+  overflow-wrap: anywhere;
+}
+
+.poster-list th {
+  background-color: var(--bg-surface);
+}
+
+.poster-list th:first-child {
+  width: 58%;
+}
+
+.poster-list th:nth-child(2) {
+  width: 18%;
+}
+
+.poster-list tbody {
+  counter-reset: poster;
+}
+
+.poster-list td:first-child:not([colspan])::before {
+  counter-increment: poster;
+  content: counter(poster) ".\a0";
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.poster-list .poster-list-empty {
+  padding: 1.25rem 0.75rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
 @media (max-width: 600px) {
+  .poster-list th,
+  .poster-list td {
+    padding-inline: 0.35rem;
+  }
+
+  .poster-list th:first-child {
+    width: 50%;
+  }
+
+  .poster-list th:nth-child(2) {
+    width: 25%;
+  }
+
   .timetable-time {
     width: 105px;
     font-size: 0.85rem;

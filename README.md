@@ -77,6 +77,7 @@ The `workshopData.schedule` array groups sessions by day. Each session entry fol
 
 * `time`: String showing the overarching time block.
 * `title`: Name of the session.
+* `titleUrl`: Optional link from the session title to more details, such as `#accepted-posters`.
 * `speakers`: (Optional) Array of speaker anchor slugs matching entries in `workshopData.speakers`. Can also take a plain string for unlisted guests (e.g. `["Prof. S. Ramakrishnan"]`).
 * `isBreak`: Boolean (`true` or `false`). When `true`, styles the row with subtle muted italic text.
 * `publicLectureUrl`: (Optional) Makes the session title and its trailing link icon a single link to the dedicated public lecture page. The session abstract is omitted from the programme page.
@@ -153,7 +154,7 @@ Individual talks inside an umbrella block do not have individual timestamps; the
 * `title`: Optional heading displayed above the notice message.
 * `html`: Message string. Supports standard HTML tags like `<a>`, `<strong>`, and `<em>`.
 * `active`: Set to `true` to display, `false` to turn off globally.
-* `pages`: Set booleans to decide exactly which pages show the notice. Up to 3 active notices are shown per page.
+* `pages`: Set booleans to decide exactly which pages show the notice. Up to 4 active notices are shown per page.
 
 ---
 
