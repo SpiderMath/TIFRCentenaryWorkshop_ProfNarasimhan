@@ -1,6 +1,61 @@
 (function () {
     const scheduleMount = document.getElementById("schedule-mount");
     const speakersMount = document.getElementById("speakers-mount");
+    const postersMount = document.getElementById("posters-mount");
+
+    async function loadPosters(tableBody) {
+        const fallback = tableBody.querySelector(".poster-list-empty");
+        const source = fallback.querySelector("a");
+        function renderPosters(posters) {
+            const rows = posters.map(function ({ title, presenter, affiliation }, index) {
+                const row = document.createElement("tr");
+                row.insertCell().textContent = String(index + 1);
+                for (const value of [title, presenter, affiliation]) {
+                    if (typeof value !== "string") throw new TypeError("Invalid poster entry");
+                    row.insertCell().textContent = value;
+                }
+                return row;
+            });
+
+            if (rows.length) {
+                tableBody.replaceChildren(...rows);
+            } else {
+                fallback.textContent = "No accepted posters are listed yet.";
+            }
+        }
+
+        if (window.location.protocol === "file:") {
+            const picker = fallback.querySelector(".poster-file-picker");
+            const input = picker.querySelector("input");
+            const status = picker.querySelector('[role="status"]');
+            source.hidden = true;
+            picker.hidden = false;
+            input.addEventListener("change", async function () {
+                const file = input.files[0];
+                if (!file) return;
+                input.disabled = true;
+                try {
+                    renderPosters(JSON.parse(await file.text()));
+                } catch {
+                    status.textContent = "Could not read this poster list. Choose a valid posters.json file.";
+                    input.value = "";
+                } finally {
+                    input.disabled = false;
+                }
+            });
+            return;
+        }
+
+        try {
+            const response = await fetch(source.href);
+            if (!response.ok) throw new Error("Could not load the accepted posters");
+            renderPosters(await response.json());
+        } catch {
+            source.before("The poster list could not be displayed. ");
+        }
+    }
+
+    if (postersMount) loadPosters(postersMount);
 
     if (!scheduleMount || !speakersMount || typeof workshopData === "undefined") {
         return;

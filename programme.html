@@ -112,14 +112,25 @@
                 <table class="poster-list" aria-labelledby="accepted-posters-heading">
                     <thead>
                         <tr>
+                            <th scope="col" aria-label="Poster number">No.</th>
                             <th scope="col">Poster title</th>
                             <th scope="col">Presenter</th>
                             <th scope="col">Affiliation</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="posters-mount">
                         <tr>
-                            <td colspan="3" class="poster-list-empty">The list of accepted posters will appear here.</td>
+                            <td colspan="4" class="poster-list-empty">
+                                <a href="posters.json">View the accepted posters as JSON</a>
+                                <div class="poster-file-picker" hidden>
+                                    <label>
+                                        Choose <strong>posters.json</strong> from the website folder to display the list.
+                                        <br />
+                                        <input type="file" accept=".json,application/json" />
+                                    </label>
+                                    <p role="status"></p>
+                                </div>
+                            </td>
                         </tr>
                     </tbody>
                 </table>

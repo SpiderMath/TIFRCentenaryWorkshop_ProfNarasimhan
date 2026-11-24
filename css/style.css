@@ -552,21 +552,22 @@ a:focus-visible {
 }
 
 .poster-list th:first-child {
-  width: 58%;
+  width: 3rem;
 }
 
 .poster-list th:nth-child(2) {
+  width: 55%;
+}
+
+.poster-list th:nth-child(3) {
   width: 18%;
 }
 
-.poster-list tbody {
-  counter-reset: poster;
-}
-
-.poster-list td:first-child:not([colspan])::before {
-  counter-increment: poster;
-  content: counter(poster) ".\a0";
-  font-weight: 600;
+.poster-list th:first-child,
+.poster-list td:first-child:not([colspan]) {
+  padding-inline: 0.25rem;
+  text-align: center;
+  white-space: nowrap;
   font-variant-numeric: tabular-nums;
 }
 
@@ -583,10 +584,14 @@ a:focus-visible {
   }
 
   .poster-list th:first-child {
-    width: 50%;
+    width: 2.25rem;
   }
 
   .poster-list th:nth-child(2) {
+    width: calc(50% - 2.25rem);
+  }
+
+  .poster-list th:nth-child(3) {
     width: 25%;
   }
 
