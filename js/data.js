@@ -10,7 +10,7 @@ const workshopData = {
         },
         {
           time: "09:15 - 10:00",
-          title: "Algorithms & Formal Methods",
+          title: "Algorithms",
           isBreak: false,
           talks: [
             {
@@ -36,10 +36,12 @@ const workshopData = {
             {
               title: "Fair Clustering and Consensus",
               speakers: ["diptarka-chakraborty"],
-              abstract: "Clustering is a fundamental task in data analysis, but the resulting clusters may not ensure fair representation of different population groups. In this talk, I will discuss a series of works investigating how to incorporate fairness into clustering while preserving the quality of the solution. We first consider the problem ofmodifying an existing clustering to ensure proportional representation of different groups while making minimal changes. We explore the computational challenges of this problem and develop efficient approximation algorithms, extending from two groups to arbitrarily many groups. Building on these results, we study how to combine multiple clusterings into a single fair consensus. Finally, we investigate how to achieve fair consensus efficiently in large-scale settings where clusterings arrive sequentially, and memory is limited.",
+              abstract:
+                "Clustering is a fundamental task in data analysis, but the resulting clusters may not ensure fair representation of different population groups. In this talk, I will discuss a series of works investigating how to incorporate fairness into clustering while preserving the quality of the solution. We first consider the problem ofmodifying an existing clustering to ensure proportional representation of different groups while making minimal changes. We explore the computational challenges of this problem and develop efficient approximation algorithms, extending from two groups to arbitrarily many groups. Building on these results, we study how to combine multiple clusterings into a single fair consensus. Finally, we investigate how to achieve fair consensus efficiently in large-scale settings where clusterings arrive sequentially, and memory is limited.",
             },
             {
-              title: "From Graphs to (Poly) Matroids: The Utility of the Perspective",
+              title:
+                "From Graphs to (Poly) Matroids: The Utility of the Perspective",
               speakers: ["chandra-chekuri"],
               abstract: "",
             },
@@ -140,7 +142,8 @@ const workshopData = {
             {
               title: "Teaching AI Models What You Really Want Them to Learn",
               speakers: ["aditya-gopalan"],
-              abstract: "AI models are typically trained through supervised learning, using examples of desired responses, and through reinforcement learning, using rewards for attempted responses. When absolute rewards are unavailable, comparisons between responses can be used to learn a reward signal for reinforcement learning. Popular direct preference methods simplify this process by training on the comparisons themselves. This talk examines how mismatches between training assumptions and model capabilities can cause unexpected behaviour, e.g., ultimately favouring responses that are actually preferred less, and how to address these issues. It then turns to reinforcement learning with absolute rewards, showing why uncertainty in those rewards matters for the risk of making a model worse. Drawing on theory and experiments with language models, we will present methods that address model mismatch and account for reward uncertainty. Together, these findings highlight how careful treatment of model limitations and uncertain feedback can help make AI alignment more reliable, in the broader challenge of aligning AI systems reliably with human goals. (Joint work with Sayak Ray Chowdhury, Debangshu Banerjee, Kintan Saha)",
+              abstract:
+                "AI models are typically trained through supervised learning, using examples of desired responses, and through reinforcement learning, using rewards for attempted responses. When absolute rewards are unavailable, comparisons between responses can be used to learn a reward signal for reinforcement learning. Popular direct preference methods simplify this process by training on the comparisons themselves. This talk examines how mismatches between training assumptions and model capabilities can cause unexpected behaviour, e.g., ultimately favouring responses that are actually preferred less, and how to address these issues. It then turns to reinforcement learning with absolute rewards, showing why uncertainty in those rewards matters for the risk of making a model worse. Drawing on theory and experiments with language models, we will present methods that address model mismatch and account for reward uncertainty. Together, these findings highlight how careful treatment of model limitations and uncertain feedback can help make AI alignment more reliable, in the broader challenge of aligning AI systems reliably with human goals. (Joint work with Sayak Ray Chowdhury, Debangshu Banerjee, Kintan Saha)",
             },
           ],
         },
@@ -155,9 +158,11 @@ const workshopData = {
           isBreak: false,
           talks: [
             {
-              title: "Quantum Walks: From Algorithms to Building Quantum Computers",
+              title:
+                "Quantum Walks: From Algorithms to Building Quantum Computers",
               speakers: ["cm-chandrashekar"],
-              abstract: "Random walks are among the most versatile tools in computer science, underlying algorithms for search, sampling, graph analysis and optimisation. Their quantum counterpart, the quantum walk, replaces probabilities with amplitudes that interfere. The walker spreads quadratically faster than a classical one, and this simple change has far-reaching consequences.\n\nThis talk introduces quantum walks from first principles and follows them through three roles. First, as an algorithmic tool: quantum walks give speed-ups for search and for problems on graphs and offer a natural way to rank nodes in networks. Second, as a simulator of nature: with suitably engineered walks we can reproduce the dynamics of relativistic particles, neutrino oscillations and energy transport in complex systems, turning a quantum computer into a programmable laboratory. Third, as a primitive for computer architecture: I will describe our framework showing that discrete-time quantum walks alone suffice for universal quantum computation, so a quantum computer can be designed as a walk on a suitably chosen graph. \n\nI will conclude by showing how we realised this architecture experimentally, encoding qubits in photons to demonstrate universal gates, multi-qubit entanglement and small algorithms on a six-qubit photonic processor.",
+              abstract:
+                "Random walks are among the most versatile tools in computer science, underlying algorithms for search, sampling, graph analysis and optimisation. Their quantum counterpart, the quantum walk, replaces probabilities with amplitudes that interfere. The walker spreads quadratically faster than a classical one, and this simple change has far-reaching consequences.\n\nThis talk introduces quantum walks from first principles and follows them through three roles. First, as an algorithmic tool: quantum walks give speed-ups for search and for problems on graphs and offer a natural way to rank nodes in networks. Second, as a simulator of nature: with suitably engineered walks we can reproduce the dynamics of relativistic particles, neutrino oscillations and energy transport in complex systems, turning a quantum computer into a programmable laboratory. Third, as a primitive for computer architecture: I will describe our framework showing that discrete-time quantum walks alone suffice for universal quantum computation, so a quantum computer can be designed as a walk on a suitably chosen graph. \n\nI will conclude by showing how we realised this architecture experimentally, encoding qubits in photons to demonstrate universal gates, multi-qubit entanglement and small algorithms on a six-qubit photonic processor.",
             },
             {
               title: "TBA",
