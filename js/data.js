@@ -83,10 +83,9 @@ const workshopData = {
           isBreak: false,
           talks: [
             {
-              title: "The Complexity of Secret Sharing",
-              speakers: ["benny-applebaum"],
-              abstract:
-                "Secret sharing allows a dealer to distribute a secret among a collection of parties so that only certain authorized subsets can reconstruct the secret, while unauthorized subsets learn nothing about it. The complexity of such schemes has been studied for several decades and is governed by the structure of the underlying access structure.\n\nOver the last decade, substantial progress has been made on several central questions, yet many basic problems remain wide open. In this talk, I will survey several of these recent developments and highlight some unexpected connections between the complexity of secret sharing and other questions in computational complexity.",
+              title: "TBA",
+              speakers: ["TBD"],
+              abstract: "",
             },
             {
               title:
@@ -223,13 +222,6 @@ const workshopData = {
       affiliation: "Institute of Mathematical Sciences / TIFR",
       image: "assets/cm-chandrashekar.webp",
       website: "https://www.imsc.res.in/~chandru/",
-    },
-    {
-      anchor: "benny-applebaum",
-      name: "Benny Applebaum",
-      affiliation: "Tel Aviv Universituy",
-      image: "assets/benny-applebaum.webp",
-      website: "https://bennyapplebaum.sites.tau.ac.il/",
     },
     {
       anchor: "srikanth-srinivasan",
