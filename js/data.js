@@ -65,7 +65,7 @@ const workshopData = {
         },
         {
           time: "17:30 - 19:00",
-          title: "Public lecture: Trustworthy AI for Clinical Decision Making",
+          title: "2026 Prof. R. Narasimhan Memorial Lecture",
           speakers: ["rajeev-alur"],
           publicLectureUrl: "public-lecture.html",
           abstract:
