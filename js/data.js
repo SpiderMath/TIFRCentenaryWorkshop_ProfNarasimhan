@@ -79,7 +79,7 @@ const workshopData = {
       sessions: [
         {
           time: "09:30 - 11:00",
-          title: "Complexity & Cryptography",
+          title: "Complexity",
           isBreak: false,
           talks: [
             {
@@ -104,7 +104,7 @@ const workshopData = {
         },
         {
           time: "11:30 - 13:00",
-          title: "Complexity & Cryptography",
+          title: "Complexity",
           isBreak: false,
           talks: [
             {
