@@ -1,82 +1,53 @@
-(function() {
-    // Notice configuration list
-    // Set "active" to true/false to turn an item on or off globally.
-    // In "pages", set boolean flags to control on which pages the notice appears.
-    const siteNotices = [
-        {
-            id: "accepted-posters",
-            title: "Accepted student posters",
-            html: `<p>See the <a href="programme.html#accepted-posters">accepted posters section</a> in the workshop programme.</p>`,
-            active: true,
-            pages: {
-                home: true,
-                programme: false,
-                participate: false,
-                publicLecture: false,
-                remembering: false
-            }
-        },
-        {
-            id: "registration-deadline",
-            title: "Registration will close on November 28th.",
-            html: `<p>Please register <a href="https://forms.gle/dMWKAp92bVZXLoBAA" target="_blank" rel="noopener noreferrer" aria-label="Register here for workshop attendance">here</a> by <time datetime="2026-11-28">November 28th</time> if you would like to attend.</p>`,
-            active: true,
-            pages: {
-                home: true,
-                programme: false,
-                participate: true,
-                publicLecture: false,
-                remembering: false
-            }
-        },
-        {
-            id: "poster-extension",
-            title: "Poster Submission is now closed",
-            html: `<p>The student poster submission has <strong>concluded</strong>. Selected students have been informed by email.</p>`,
-            active: true,
-            pages: {
-                home: true,
-                programme: false,
-                participate: false,
-                publicLecture: false,
-                remembering: false
-            }
-        },
-        {
-            id: "poster-extension",
-            title: "Poster Submission deadline extended",
-            html: `<p>The student poster submission deadline has been extended to <strong><time datetime="2026-10-30">October 30, 2026</time></strong>.
-                <a class="announcement-submit">Submit
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
-                        <path d="M15 3h6v6M10 14 21 3"></path>
-                        <path d="M21 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5"></path>
-                    </svg>
-                </a></p>`,
-            active: true,
-            pages: {
-                home: true,
-                programme: false,
-                participate: false,
-                publicLecture: false,
-                remembering: false
-            }
-        }
-    ];
-    const mountPoint = document.getElementById("notices-mount");
-    if (!mountPoint) return;
-    // Determine current page key from body data-page or filename
-    const currentPage = document.body.getAttribute("data-page") || "home";
-    // Filter active notices configured for this specific page (maximum 4)
-    const activeNotices = siteNotices.filter(function(item) {
-        return item.active && item.pages && item.pages[currentPage] === true;
-    }).slice(0, 4);
-    if (activeNotices.length === 0) {
-        mountPoint.innerHTML = "";
-        return;
-    }
-    let noticesHTML = '<section class="notices-container" aria-labelledby="announcements-heading"><h2 id="announcements-heading" class="announcements-heading">Announcements</h2>';
-    activeNotices.forEach(function(notice) {
-        noticesHTML += `
+(function () {
+  // Notice configuration list
+  // Set "active" to true/false to turn an item on or off globally.
+  // In "pages", set boolean flags to control on which pages the notice appears.
+  const siteNotices = [
+    {
+      id: "accepted-posters",
+      title: "Accepted student posters",
+      html: `<p>See the <a href="programme.html#accepted-posters">accepted posters section</a> in the workshop programme.</p>`,
+      active: true,
+      pages: {
+        home: true,
+        programme: false,
+        participate: false,
+        publicLecture: false,
+        remembering: false,
+      },
+    },
+    {
+      id: "registration-deadline",
+      title: "Registration will close on November 28th.",
+      html: `<p>Please register <a href="https://forms.gle/dMWKAp92bVZXLoBAA" target="_blank" rel="noopener noreferrer" aria-label="Register here for workshop attendance">here</a> by <time datetime="2026-11-28">November 28th</time> if you would like to attend.</p>`,
+      active: true,
+      pages: {
+        home: true,
+        programme: false,
+        participate: true,
+        publicLecture: false,
+        remembering: false,
+      },
+    },
+  ];
+  const mountPoint = document.getElementById("notices-mount");
+  if (!mountPoint) return;
+  // Determine current page key from body data-page or filename
+  const currentPage = document.body.getAttribute("data-page") || "home";
+  // Filter active notices configured for this specific page (maximum 4)
+  const activeNotices = siteNotices
+    .filter(function (item) {
+      return item.active && item.pages && item.pages[currentPage] === true;
+    })
+    .slice(0, 4);
+  if (activeNotices.length === 0) {
+    mountPoint.innerHTML = "";
+    return;
+  }
+  let noticesHTML =
+    '<section class="notices-container" aria-labelledby="announcements-heading"><h2 id="announcements-heading" class="announcements-heading">Announcements</h2>';
+  activeNotices.forEach(function (notice) {
+    noticesHTML += `
             <article class="announcement-banner">
                 ${notice.tag ? `<span class="announcement-tag">${notice.tag}</span>` : ""}
                 <div class="announcement-content">
@@ -85,7 +56,7 @@
                 </div>
             </article>
         `;
-    });
-    noticesHTML += "</section>";
-    mountPoint.innerHTML = noticesHTML;
+  });
+  noticesHTML += "</section>";
+  mountPoint.innerHTML = noticesHTML;
 })();
